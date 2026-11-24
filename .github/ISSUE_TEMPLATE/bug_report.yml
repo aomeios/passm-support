@@ -1,0 +1,42 @@
+name: 🛠️ Bug Report / 問題回報（無密回報安全表單）
+description: Report a bug or ask for technical assistance (iOS / iPadOS / Android)
+title: "[Support] "
+labels: ["support"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        > ⚠️ **無密回報安全鐵律 / No-Secret Reporting Rule**
+        > **切勿**在此附上您的**主密碼（Master Password）**、備份密碼、`.passmbak` 檔案、CSV 檔案或未遮蔽真實密碼之截圖！
+        > **NEVER** share your Master Password, Backup Password, `.passmbak` archive, CSV file, or unmasked secret screenshots!
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform / 平台
+      options:
+        - iOS (iPhone)
+        - iPadOS (iPad)
+        - Android
+    validations:
+      required: true
+  - type: input
+    id: device_os
+    attributes:
+      label: Device Model & OS Version / 裝置型號與系統版本
+      placeholder: e.g., iPhone 16 Pro (iOS 18.7) / Pixel 9 (Android 15)
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Steps & Description / 問題步驟與畫面提示描述
+      placeholder: Describe what happened and any message shown on screen...
+    validations:
+      required: true
+  - type: checkboxes
+    id: no_secret
+    attributes:
+      label: Security Confirmation / 安全確認
+      options:
+        - label: I confirm this report contains NO Master Password, .passmbak file, or unmasked secrets. / 我確認本回報不含任何主密碼、備份檔或未遮罩機密資訊。
+          required: true

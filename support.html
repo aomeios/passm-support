@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" data-active-lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self';">
+  <title>PassM Support &amp; FAQ — 客戶支援與安全回報中心</title>
+  <meta name="description" content="Official PassM Support Center, No-Secret Reporting Guide, Direct Email Contact, and Frequently Asked Questions for iOS and Android.">
+  <link rel="icon" type="image/png" href="./assets/favicon.png">
+  <link rel="apple-touch-icon" href="./assets/icon.png">
+  <link rel="stylesheet" href="./assets/styles.css">
+  <script src="./assets/site.js" defer></script>
+</head>
+<body>
+  <header class="navbar">
+    <div class="nav-inner">
+      <a href="./index.html" class="brand">
+        <img src="./assets/icon.png" alt="PassM Icon">
+        <span>PassM</span>
+        <span class="brand-badge">Support</span>
+      </a>
+      <nav class="nav-links">
+        <a href="./index.html">
+          <span data-lang="zh">產品首頁</span>
+          <span data-lang="en">Overview</span>
+          <span data-lang="ja">ホーム</span>
+        </a>
+        <a href="./index.html#security">
+          <span data-lang="zh">安全架構</span>
+          <span data-lang="en">Security</span>
+          <span data-lang="ja">暗号化設計</span>
+        </a>
+        <a href="./support.html" class="active">
+          <span data-lang="zh">技術支援與 FAQ</span>
+          <span data-lang="en">Support &amp; FAQ</span>
+          <span data-lang="ja">サポート・FAQ</span>
+        </a>
+        <a href="./privacy.html">
+          <span data-lang="zh">隱私權政策</span>
+          <span data-lang="en">Privacy Policy</span>
+          <span data-lang="ja">プライバシーポリシー</span>
+        </a>
+      </nav>
+      <div class="lang-switcher" role="group" aria-label="Language Switcher">
+        <button type="button" class="lang-btn active" data-set-lang="zh">繁中</button>
+        <button type="button" class="lang-btn" data-set-lang="en">EN</button>
+        <button type="button" class="lang-btn" data-set-lang="ja">日本語</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="page-header">
+        <h1 data-lang="zh">客戶支援與安全回報中心</h1>
+        <h1 data-lang="en">Customer Support &amp; Help Center</h1>
+        <h1 data-lang="ja">カスタマーサポート＆ヘルプセンター</h1>
+        <p data-lang="zh">無須註冊任何帳號即可直接透過電子郵件聯繫我們，或在下方快速查詢 iOS / Android 常見問題解答。</p>
+        <p data-lang="en">Reach us directly via email with zero sign-up required, or browse instant answers for iOS and Android below.</p>
+        <p data-lang="ja">アカウント登録不要で直接メールにてお問い合わせいただけます。下部のよくある質問もあわせてご確認ください。</p>
+      </div>
+
+      <!-- Mandatory No-Secret Reporting Rule -->
+      <div class="alert-danger" role="alert">
+        <h3>
+          <span>⚠️</span>
+          <span data-lang="zh">安全鐵律：無密回報守則（No-Secret Reporting Rule）</span>
+          <span data-lang="en">Security Rule: No-Secret Reporting Policy</span>
+          <span data-lang="ja">セキュリティ鉄則：機密情報を含めない報告ルール</span>
+        </h3>
+        <p data-lang="zh">PassM 採 100% 離線零知識架構，支援團隊<strong>在任何情況下都絕不會</strong>向您索取密碼或備份檔。來信或回報問題時，<strong>請絕對不要提供或夾帶</strong>：</p>
+        <p data-lang="en">PassM is a 100% offline zero-knowledge vault. Our support team will <strong>NEVER</strong> ask for your secrets. When contacting us, <strong>NEVER share or attach</strong>:</p>
+        <p data-lang="ja">PassM は完全オフラインのゼロ知識設計です。サポートが機密情報を尋ねることは<strong>絶対にありません</strong>。お問い合わせの際は<strong>以下の情報を絶対に送信しないでください</strong>：</p>
+        <ul>
+          <li>
+            <span data-lang="zh">您的<strong>主密碼（Master Password）</strong>或備份加密密碼</span>
+            <span data-lang="en">Your <strong>Master Password</strong> or Backup Password</span>
+            <span data-lang="ja"><strong>マスターパスワード</strong>またはバックアップ用パスワード</span>
+          </li>
+          <li>
+            <span data-lang="zh">您的 <code>.passmbak</code> 加密備份檔或任何匯出的 <code>.csv</code> 檔案</span>
+            <span data-lang="en">Your <code>.passmbak</code> backup archive or any exported <code>.csv</code> file</span>
+            <span data-lang="ja"><code>.passmbak</code> バックアップファイルや <code>.csv</code> ファイル</span>
+          </li>
+          <li>
+            <span data-lang="zh">含有真實密碼、TOTP 驗證碼、信用卡號、CVV/PIN 或安全筆記之<strong>未遮罩螢幕截圖</strong></span>
+            <span data-lang="en"><strong>Unmasked screenshots</strong> showing real passwords, TOTP codes, card numbers, CVV/PIN, or notes</span>
+            <span data-lang="ja">実際のパスワード・TOTPコード・カード番号・CVV・メモが写った<strong>未マスクのスクリーンショット</strong></span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Dual-Channel Contact Cards -->
+      <div class="grid-2" style="margin-bottom: 52px;">
+        <div class="card card-highlight">
+          <div class="card-icon">✉️</div>
+          <h3 data-lang="zh">官方客服信箱（免登入，推薦一般用戶）</h3>
+          <h3 data-lang="en">Direct Email Support (No Account Needed)</h3>
+          <h3 data-lang="ja">公式メールサポート（登録不要・推奨）</h3>
+          <p data-lang="zh">點擊下方按鈕將自動開啟您的郵件軟體並帶入環境回報範本（裝置型號／系統版本），或直接寄信至 <code>coolcrist@gmail.com</code>。</p>
+          <p data-lang="en">Click below to open your mail app with a pre-filled diagnostic template (device model &amp; OS version), or email <code>coolcrist@gmail.com</code> directly.</p>
+          <p data-lang="ja">下のボタンから環境情報テンプレート付きでメールを作成できます（宛先：<code>coolcrist@gmail.com</code>）。</p>
+          <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 20px;">
+            <a class="btn btn-gold" data-mailto-template href="mailto:coolcrist@gmail.com">
+              <span data-lang="zh">撰寫支援信件（自動帶入範本）</span>
+              <span data-lang="en">Send Support Email (Template)</span>
+              <span data-lang="ja">サポートメールを作成（テンプレート付）</span>
+            </a>
+            <button type="button" class="btn btn-outline" data-copy-email>
+              <span data-lang="zh">複製信箱地址</span>
+              <span data-lang="en">Copy Email</span>
+              <span data-lang="ja">アドレスをコピー</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🛠️</div>
+          <h3 data-lang="zh">GitHub Issues 公開問題追蹤與功能建議</h3>
+          <h3 data-lang="en">GitHub Issue Tracker &amp; Feature Requests</h3>
+          <h3 data-lang="ja">GitHub Issues（バグ報告・機能要望）</h3>
+          <p data-lang="zh">若您擁有 GitHub 帳號，歡迎透過公開 Issue 追蹤單回報錯誤重現步驟、查閱已知問題進度或提出新功能建議。</p>
+          <p data-lang="en">Developers and power users can file structured bug reports, check known issues, or submit feature requests on our public tracker.</p>
+          <p data-lang="ja">GitHub アカウントをお持ちの方は、公開 Issue トラッカーからバグ報告や機能リクエストを投稿することも可能です。</p>
+          <div style="margin-top: 20px;">
+            <a class="btn btn-outline" href="https://github.com/aomeios/passm-support/issues" target="_blank" rel="noopener noreferrer">
+              <span data-lang="zh">前往 GitHub Issues 追蹤區 ↗</span>
+              <span data-lang="en">Open GitHub Issues ↗</span>
+              <span data-lang="ja">GitHub Issues を開く ↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive FAQ -->
+      <section style="margin-bottom: 40px;">
+        <h2 style="font-size: 1.6rem; margin-bottom: 16px;">
+          <span data-lang="zh">常見問題排除（FAQ）</span>
+          <span data-lang="en">Frequently Asked Questions (FAQ)</span>
+          <span data-lang="ja">よくある質問（FAQ）</span>
+        </h2>
+
+        <div class="faq-search-wrap">
+          <input id="faq-search" type="search" class="faq-search" placeholder="搜尋常見問題...">
+        </div>
+
+        <div class="faq-list">
+          <!-- FAQ 1 -->
+          <details class="faq-item" open>
+            <summary>
+              <span data-lang="zh">Q1：購買 $9.99 PassM Pro 永久專業版後，更換手機或重新安裝 App 如何恢復購買資格？</span>
+              <span data-lang="en">Q1: How do I restore my $9.99 PassM Pro Lifetime purchase on a new phone or after reinstalling?</span>
+              <span data-lang="ja">Q1：$9.99 の PassM Pro（買い切り版）を購入後、機種変更や再インストール時に復元するには？</span>
+            </summary>
+            <div class="faq-body">
+              <p data-lang="zh">請確認您的裝置已登入當初購買時使用的同一個 <strong>Apple ID（App Store）</strong> 或 <strong>Google Play 帳號</strong> 並保持網路連線：</p>
+              <ul data-lang="zh">
+                <li>開啟 PassM 並解鎖金庫 ➔ 點擊右上角齒輪進入 <strong>「設定 (Settings)」</strong>。</li>
+                <li>在頂部 <strong>「PassM Pro」</strong> 卡片點擊 <strong>「恢復購買 (Restore Purchases)」</strong>。</li>
+                <li>系統透過官方商店驗證有效買斷收據後，即會自動恢復無限筆數資格並封印至本機硬體安全快取，無須再次付費。</li>
+              </ul>
+              <p data-lang="en">Ensure your device is signed in to the same <strong>Apple ID (App Store)</strong> or <strong>Google Play account</strong> used for the original purchase:</p>
+              <ul data-lang="en">
+                <li>Open PassM ➔ tap the top-right gear icon to open <strong>Settings</strong>.</li>
+                <li>Under the <strong>PassM Pro</strong> section, tap <strong>Restore Purchases</strong>.</li>
+                <li>Once StoreKit 2 / Google Play Billing verifies your receipt, unlimited capacity is restored immediately at zero cost.</li>
+              </ul>
+              <p data-lang="ja">購入時と同じ <strong>Apple ID（App Store）</strong> または <strong>Google Play アカウント</strong> にサインインした状態で以下の手順を実行してください：</p>
+              <ul data-lang="ja">
+                <li>PassM を開いてロックを解除し、右上の歯車アイコンから <strong>「設定」</strong> を開きます。</li>
+                <li><strong>「PassM Pro」</strong> セクション内の <strong>「購入を復元」</strong> をタップします。</li>
+                <li>公式ストアで有効な購入履歴が確認されると、即座に無制限容量が復元されます。</li>
+              </ul>
+            </div>
+          </details>
+
+          <!-- FAQ 2 -->
+          <details class="faq-item">
+            <summary>
+              <span data-lang="zh">Q2：達到免費版 100 筆上限後無法新增第 101 筆，原本儲存的密碼會被鎖住嗎？</span>
+              <span data-lang="en">Q2: What happens when I reach the 100-item Free Tier limit? Will my existing passwords be locked?</span>
+              <span data-lang="ja">Q2：無料版の100件上限に達すると、保存済みのパスワードは見られなくなりますか？</span>
+            </summary>
+            <div class="faq-body">
+              <p data-lang="zh"><strong>絕對不會鎖庫！</strong>PassM 嚴格遵守「軟性上限絕不綁架資料」原則：免費版達 100 筆（或退款退回免費版）時，僅會暫停新增第 101 筆項目；您既有的全部項目<strong>永久可正常檢視、搜尋、複製密碼、編輯、刪除、使用系統自動填寫（AutoFill）、執行離線安全審計，以及完整匯出 <code>.passmbak</code> 加密備份</strong>。</p>
+              <p data-lang="en"><strong>Never!</strong> PassM enforces a strict Soft-Cap No-Lockout policy. Reaching 100 items only pauses adding a 101st item — all existing items remain <strong>permanently readable, searchable, editable, deletable, usable via AutoFill, and fully exportable to <code>.passmbak</code> backups</strong> forever.</p>
+              <p data-lang="ja"><strong>いいえ、既存データがロックされることは一切ありません。</strong>100件に達すると101件目の新規追加のみが制限されますが、保存済みのすべての項目は<strong>永久に閲覧・検索・編集・削除・自動入力・<code>.passmbak</code> バックアップ出力が可能</strong>です。</p>
+            </div>
+          </details>
+
+          <!-- FAQ 3 -->
+          <details class="faq-item">
+            <summary>
+              <span data-lang="zh">Q3：忘記主密碼（Master Password）可以請官方幫忙重設或救回資料嗎？如何清空重建金庫？</span>
+              <span data-lang="en">Q3: I forgot my Master Password. Can support reset it or recover my vault? How do I wipe and start over?</span>
+              <span data-lang="ja">Q3：マスターパスワードを忘れました。運営側でリセットやデータ復旧はできますか？初期化方法は？</span>
+            </summary>
+            <div class="faq-body">
+              <p data-lang="zh"><strong>無法救回。</strong>由於 PassM 為 100% 離線零知識架構，無伺服器、無帳號、無任何後門金鑰；若遺忘主密碼且沒有事先匯出並記得密碼的 <code>.passmbak</code> 備份檔，任何人在數學上均無法解密該資料庫。</p>
+              <p data-lang="zh">若您決定放棄舊資料並徹底抹除重建新金庫：</p>
+              <ul data-lang="zh">
+                <li><strong>iOS / iPadOS</strong>：在解鎖畫面點擊 <strong>「忘記主密碼？」</strong> ➔ 勾選確認不可逆警告並輸入大寫 <code>RESET</code>，即可完整清除資料庫與 Keychain 金鑰重新建立。</li>
+                <li><strong>Android</strong>：前往系統「設定 ➔ 應用程式 ➔ PassM ➔ 儲存空間 ➔ 清除儲存空間」（或重新安裝 App），即可重新建立新金庫。</li>
+              </ul>
+              <p data-lang="en"><strong>Recovery is mathematically impossible.</strong> PassM has no servers, no accounts, and no recovery backdoors. If you forget your Master Password and do not have an encrypted <code>.passmbak</code> backup with a known backup password, the vault cannot be decrypted.</p>
+              <ul data-lang="en">
+                <li><strong>To wipe &amp; start fresh on iOS / iPadOS</strong>: On the Unlock screen, tap <strong>"Forgot Master Password?"</strong>, check the confirmation box, and type uppercase <code>RESET</code> to erase both database and Keychain keys.</li>
+                <li><strong>To wipe &amp; start fresh on Android</strong>: Go to Android Settings ➔ Apps ➔ PassM ➔ Storage ➔ Clear Storage (or reinstall the app).</li>
+              </ul>
+              <p data-lang="ja"><strong>復旧はできません。</strong>PassM はサーバーもバックドアも持たない完全ゼロ知識設計のため、マスターパスワードを紛失し、パスワードがわかる <code>.passmbak</code> バックアップもない場合、復号は不可能です。</p>
+              <ul data-lang="ja">
+                <li><strong>iOS / iPadOS で初期化して作り直す場合</strong>：ロック解除画面の<strong>「マスターパスワードをお忘れですか？」</strong>をタップし、同意にチェックを入れて大文字で <code>RESET</code> と入力すると完全に消去されます。</li>
+                <li><strong>Android で初期化して作り直す場合</strong>：端末の「設定 ➔ アプリ ➔ PassM ➔ ストレージを消去」（またはアプリの再インストール）を行ってください。</li>
+              </ul>
+            </div>
+          </details>
+
+          <!-- FAQ 4 -->
+          <details class="faq-item">
+            <summary>
+              <span data-lang="zh">Q4：如何在 iOS（Safari 與跨 App）及 Android 啟用系統自動填寫（AutoFill）？</span>
+              <span data-lang="en">Q4: How do I enable system-wide AutoFill on iOS (Safari &amp; Apps) and Android?</span>
+              <span data-lang="ja">Q4：iOS（Safari・他アプリ）や Android で自動入力（AutoFill）を有効にするには？</span>
+            </summary>
+            <div class="faq-body">
+              <ul data-lang="zh">
+                <li><strong>iOS / iPadOS</strong>：前往系統 <strong>「設定 ➔ 一般 ➔ 自動填寫與密碼 (AutoFill &amp; Passwords)」</strong> ➔ 開啟「自動填寫密碼與通行密鑰」，並在下方「自動填寫來源」勾選 <strong>PassM</strong>。</li>
+                <li><strong>Android</strong>：前往系統 <strong>「設定 ➔ 密碼、通行密鑰與自動填入（或系統 ➔ 語言與輸入法）➔ 慣用服務」</strong> ➔ 選擇 <strong>PassM</strong>。</li>
+              </ul>
+              <ul data-lang="en">
+                <li><strong>iOS / iPadOS</strong>: Open iOS <strong>Settings ➔ General ➔ AutoFill &amp; Passwords</strong>, turn on "AutoFill Passwords and Passkeys", and toggle on <strong>PassM</strong> under AutoFill From.</li>
+                <li><strong>Android</strong>: Open Android <strong>Settings ➔ Passwords, passkeys &amp; accounts (or System ➔ Languages &amp; input) ➔ Preferred service</strong>, and select <strong>PassM</strong>.</li>
+              </ul>
+              <ul data-lang="ja">
+                <li><strong>iOS / iPadOS</strong>：端末の<strong>「設定 ➔ 一般 ➔ 自動入力とパスワード」</strong>を開き、「パスワードとパスキーを自動入力」をオンにして一覧から <strong>PassM</strong> を選択します。</li>
+                <li><strong>Android</strong>：端末の<strong>「設定 ➔ パスワードとアカウント（またはシステム ➔ 言語と入力）➔ 自動入力サービス」</strong>から <strong>PassM</strong> を選択します。</li>
+              </ul>
+            </div>
+          </details>
+
+          <!-- FAQ 5 -->
+          <details class="faq-item">
+            <summary>
+              <span data-lang="zh">Q5：如何備份密碼庫或將資料安全轉移到新手機（跨 iOS / Android 通用）？</span>
+              <span data-lang="en">Q5: How do I back up my vault or migrate between iOS and Android devices?</span>
+              <span data-lang="ja">Q5：バックアップの作成や、iOS・Android 間での機種変更データ移行の方法は？</span>
+            </summary>
+            <div class="faq-body">
+              <p data-lang="zh">進入「設定 ➔ 備份與資料管理 ➔ 匯出加密備份」，設定一組高強度備份密碼即可匯出 <code>.passmbak</code> 加密備份檔（採用 120 萬次 PBKDF2 + AES-256-GCM 加密，單檔上限 32 MiB）。在新手機安裝 PassM 並建立金庫後，進入「設定 ➔ 匯入加密備份」選取該 <code>.passmbak</code> 檔輸入備份密碼即可無損合併還原（<code>MERGE_SKIP</code> 不覆蓋既有同 ID 項目）。</p>
+              <p data-lang="en">Go to <strong>Settings ➔ Export Encrypted Backup</strong> to generate a <code>.passmbak</code> file protected by 1,200,000-iteration PBKDF2 + AES-256-GCM (up to 32 MiB). On your new iOS or Android device, create a vault and choose <strong>Settings ➔ Import Encrypted Backup</strong> to safely merge all items (<code>MERGE_SKIP</code>).</p>
+              <p data-lang="ja">「設定 ➔ 暗号化バックアップをエクスポート」からバックアップ用パスワードを設定し、<code>.passmbak</code> ファイル（120万回 PBKDF2 + AES-256-GCM、上限 32 MiB）を保存します。新しい iOS / Android 端末の PassM で「暗号化バックアップをインポート」を選択すると安全に統合復元されます。</p>
+            </div>
+          </details>
+
+          <!-- FAQ 6 -->
+          <details class="faq-item">
+            <summary>
+              <span data-lang="zh">Q6：如何從 Chrome、Edge 或 Bitwarden 批次匯入現有密碼？為什麼不支援匯出 CSV？</span>
+              <span data-lang="en">Q6: How do I import passwords from Chrome or Bitwarden CSV? Why is plaintext CSV export disabled?</span>
+              <span data-lang="ja">Q6：Chrome や Bitwarden から CSV インポートするには？CSV エクスポートがない理由は？</span>
+            </summary>
+            <div class="faq-body">
+              <p data-lang="zh">您可於「設定 ➔ 匯入 CSV 檔案」匯入由 Google Chrome 或 Bitwarden 匯出的標準 CSV 密碼檔，匯入完成後<strong>請務必立即將裝置上的明文 CSV 檔案永久刪除（含垃圾桶）</strong>。為貫徹零明文落地安全原則，PassM 採「CSV 僅進不出」設計，匯出備份一律強制使用高強度加密的 <code>.passmbak</code> 格式。</p>
+              <p data-lang="en">Use <strong>Settings ➔ Import CSV</strong> to import standard Google Chrome or Bitwarden CSV exports, then <strong>immediately delete the plaintext CSV file (including Recently Deleted / Trash)</strong> from your device. To prevent accidental plaintext exposure, PassM strictly prohibits plaintext CSV exports — all exports use encrypted <code>.passmbak</code> archives.</p>
+              <p data-lang="ja">「設定 ➔ CSV ファイルをインポート」から Google Chrome または Bitwarden 形式の CSV を取り込めます。完了後は<strong>端末内の平文 CSV ファイルをゴミ箱も含めて直ちに完全削除してください</strong>。平文漏洩を防ぐため、エクスポートは暗号化された <code>.passmbak</code> 形式のみとなります。</p>
+            </div>
+          </details>
+
+          <!-- FAQ 7 -->
+          <details class="faq-item">
+            <summary>
+              <span data-lang="zh">Q7：為什麼新增或變更系統 Face ID／指紋後，PassM 會要求重新輸入一次主密碼？</span>
+              <span data-lang="en">Q7: Why did PassM ask for my Master Password after I changed Face ID or fingerprint settings?</span>
+              <span data-lang="ja">Q7：端末の Face ID や指紋設定を変更した後、マスターパスワードの再入力を求められたのはなぜですか？</span>
+            </summary>
+            <div class="faq-body">
+              <p data-lang="zh">這是 PassM 的硬體級防入侵設計（<code>BiometryCurrentSet</code> 當前生物特徵集合綁定）。為防止他人得知您的手機螢幕解鎖密碼後在系統新增自己的指紋／臉孔來解開密碼庫，一旦作業系統偵測到生物特徵有增減變更，舊的快速解鎖封印金鑰即會自動作廢；您只需以主密碼解鎖後於設定頁重新開啟生物辨識即可。</p>
+              <p data-lang="en">This is an intentional hardware security safeguard (<code>BiometryCurrentSet</code> binding). If someone adds a new fingerprint or Face ID appearance to your device, PassM's hardware biometric key automatically invalidates itself to block unauthorized vault access. Simply unlock with your Master Password and re-enable biometric unlock in Settings.</p>
+              <p data-lang="ja">不正アクセスを防ぐためのハードウェア保護仕様（<code>BiometryCurrentSet</code> バインド）です。第三者が端末に新しい指紋や顔を登録して保管庫を開けるのを防ぐため、生体情報の変更を検知すると生体認証キーが自動失効します。マスターパスワードで解錠後、設定から再度オンにしてください。</p>
+            </div>
+          </details>
+
+          <!-- FAQ 8 -->
+          <details class="faq-item">
+            <summary>
+              <span data-lang="zh">Q8：為什麼多次輸錯主密碼會出現倒數鎖定？剪貼簿複製後為什麼會自動清空？</span>
+              <span data-lang="en">Q8: Why is there a countdown timer after wrong password attempts, and why does the clipboard auto-clear?</span>
+              <span data-lang="ja">Q8：パスワードを連続で間違えると待機時間が発生するのはなぜですか？クリップボードの自動消去とは？</span>
+            </summary>
+            <div class="faq-body">
+              <p data-lang="zh">為抵禦暴力破解攻擊，連續輸錯主密碼達 5 次起將啟動單調時鐘指數退避冷卻（30 秒、1 分鐘……最長 30 分鐘），即使重新開機或修改系統時間亦無法繞過。此外，複製密碼或驗證碼時會標記為敏感剪貼簿內容，並於預設倒數到期或金庫上鎖時自動清除，降低其他 App 窺探剪貼簿的風險（可於設定調整自動上鎖與剪貼簿清除秒數）。</p>
+              <p data-lang="en">After 5 consecutive failed unlock attempts, PassM enforces monotonic-clock exponential backoff (30s up to 30m) that cannot be bypassed by changing the system clock. Copied passwords are flagged as sensitive on the OS clipboard and automatically scrubbed after the configured timeout or when the vault locks.</p>
+              <p data-lang="ja">総当たり攻撃を防ぐため、5回連続で誤入力するとシステム時刻の変更では回避できない指数バックオフ待機時間（30秒〜最大30分）が適用されます。また、コピーしたパスワードは機密属性が付与され、指定秒数の経過またはロック時に自動消去されます。</p>
+            </div>
+          </details>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="copy-toast" class="toast" role="status" aria-live="polite">
+    <span data-lang="zh">✓ 已複製客服信箱：coolcrist@gmail.com</span>
+    <span data-lang="en">✓ Copied: coolcrist@gmail.com</span>
+    <span data-lang="ja">✓ コピーしました：coolcrist@gmail.com</span>
+  </div>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>© 2026 Chris Su · PassM Local Password Vault. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="./index.html">
+          <span data-lang="zh">首頁</span><span data-lang="en">Home</span><span data-lang="ja">ホーム</span>
+        </a>
+        <a href="./support.html">
+          <span data-lang="zh">客戶支援與 FAQ</span><span data-lang="en">Support &amp; FAQ</span><span data-lang="ja">サポート・FAQ</span>
+        </a>
+        <a href="./privacy.html">
+          <span data-lang="zh">隱私權政策</span><span data-lang="en">Privacy Policy</span><span data-lang="ja">プライバシーポリシー</span>
+        </a>
+        <a href="https://github.com/aomeios/passm-support/issues" target="_blank" rel="noopener noreferrer">GitHub Issues</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

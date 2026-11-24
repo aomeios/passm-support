@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 🌐 Official Support Center & FAQ / 官方支援與常見問題（免登入）
+    url: https://aomeios.github.io/passm-support/support.html
+    about: Browse instant troubleshooting guides or contact us via direct email without a GitHub account.
+  - name: ✉️ Direct Email Support / 直接寄信客服（coolcrist@gmail.com）
+    url: mailto:coolcrist@gmail.com?subject=%5BPassM%20Support%5D%20Inquiry
+    about: Prefer email? Contact coolcrist@gmail.com directly. NEVER include your Master Password or .passmbak file!

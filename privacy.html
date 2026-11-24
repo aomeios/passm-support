@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" data-active-lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self';">
+  <title>PassM Privacy Policy — 隱私權政策 / プライバシーポリシー</title>
+  <meta name="description" content="PassM Official Privacy Policy for iOS, iPadOS, and Android. 100% local offline processing, zero data collection, zero tracking SDKs.">
+  <link rel="icon" type="image/png" href="./assets/favicon.png">
+  <link rel="apple-touch-icon" href="./assets/icon.png">
+  <link rel="stylesheet" href="./assets/styles.css">
+  <script src="./assets/site.js" defer></script>
+</head>
+<body>
+  <header class="navbar">
+    <div class="nav-inner">
+      <a href="./index.html" class="brand">
+        <img src="./assets/icon.png" alt="PassM Icon">
+        <span>PassM</span>
+        <span class="brand-badge">Privacy</span>
+      </a>
+      <nav class="nav-links">
+        <a href="./index.html">
+          <span data-lang="zh">產品首頁</span>
+          <span data-lang="en">Overview</span>
+          <span data-lang="ja">ホーム</span>
+        </a>
+        <a href="./index.html#security">
+          <span data-lang="zh">安全架構</span>
+          <span data-lang="en">Security</span>
+          <span data-lang="ja">暗号化設計</span>
+        </a>
+        <a href="./support.html">
+          <span data-lang="zh">技術支援與 FAQ</span>
+          <span data-lang="en">Support &amp; FAQ</span>
+          <span data-lang="ja">サポート・FAQ</span>
+        </a>
+        <a href="./privacy.html" class="active">
+          <span data-lang="zh">隱私權政策</span>
+          <span data-lang="en">Privacy Policy</span>
+          <span data-lang="ja">プライバシーポリシー</span>
+        </a>
+      </nav>
+      <div class="lang-switcher" role="group" aria-label="Language Switcher">
+        <button type="button" class="lang-btn active" data-set-lang="zh">繁中</button>
+        <button type="button" class="lang-btn" data-set-lang="en">EN</button>
+        <button type="button" class="lang-btn" data-set-lang="ja">日本語</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="page-header">
+        <h1 data-lang="zh">PassM 隱私權政策</h1>
+        <h1 data-lang="en">PassM Privacy Policy</h1>
+        <h1 data-lang="ja">PassM プライバシーポリシー</h1>
+        <p>
+          <span data-lang="zh">最後更新日期：2026-10-26 · 適用產品：PassM（iOS / iPadOS / Android）</span>
+          <span data-lang="en">Last Updated: October 26, 2026 · Applicable Product: PassM (iOS / iPadOS / Android)</span>
+          <span data-lang="ja">最終更新日：2026-10-26 ・ 対象製品：PassM（iOS / iPadOS / Android）</span>
+        </p>
+      </div>
+
+      <!-- Traditional Chinese -->
+      <article class="prose" data-lang="zh">
+        <h2>1. 核心隱私承諾：100% 本地離線運算、零資料收集</h2>
+        <p>PassM 是一款純離線、零知識（Zero-Knowledge）的本地密碼與私密資訊管理工具。<strong>我們不擁有、不租用、也不運作任何可接收您密碼庫資料的後端伺服器。</strong></p>
+        <ul>
+          <li><strong>零個人資料收集</strong>：PassM 不要求註冊帳號，亦不收集、不儲存、不傳輸您的姓名、電子郵件、電話號碼、裝置識別碼或位置資訊。</li>
+          <li><strong>零密碼庫外傳</strong>：您儲存於 PassM 內的所有帳號密碼、動態驗證碼（TOTP）種子、信用卡資訊、安全筆記與檢查清單，均僅存於您個人裝置的本地沙盒中。</li>
+          <li><strong>零追蹤與零廣告 SDK</strong>：PassM（以及本官方網站）未植入任何第三方分析（Analytics）、行為追蹤、廣告投放或崩潰自動回報 SDK。</li>
+          <li><strong>Android 實體零網路權限</strong>：PassM Android 版本已於應用程式資訊清單（<code>AndroidManifest.xml</code>）中移除 <code>android.permission.INTERNET</code> 與 <code>android.permission.ACCESS_NETWORK_STATE</code> 權限，從作業系統層級確保應用程式本體無法發起任何網路連線。</li>
+        </ul>
+
+        <h2>2. 資料加密與硬體安全儲存架構</h2>
+        <p>您的敏感資料在裝置本地端全程受雙層認證加密與硬體金鑰保護：</p>
+        <ol>
+          <li><strong>主密碼衍生與裝置綁定</strong>：您的主密碼（Master Password）永不落盤儲存；系統透過 <code>PBKDF2-HMAC-SHA256</code>（600,000 次迭代）與 <code>HKDF-SHA256</code> 結合儲存在硬體安全模組（Android Keystore / iOS Keychain）中之 32-byte 裝置機密（Device Secret）衍生加密金鑰。</li>
+          <li><strong>雙層資料庫與欄位加密</strong>：底層採用 SQLCipher（<code>AES-256</code>）全庫加密；密碼與敏感附加欄位（<code>secret_extras</code>）另以 <code>AES-256-GCM</code> 搭配 34-byte 關聯認證資料（AAD）進行第二層獨立封裝。</li>
+          <li><strong>生物辨識驗證</strong>：當您啟用指紋、Face ID 或 Touch ID 快速解鎖時，生物特徵驗證完全由 Android 作業系統或 iOS LocalAuthentication / Secure Enclave 在本機執行；PassM 僅讀取硬體授權狀態，絕無法存取您的生物特徵原始資料。</li>
+        </ol>
+
+        <h2>3. 備份檔案（.passmbak）與匯入資料處理</h2>
+        <ul>
+          <li>當您使用匯出加密備份（<code>.passmbak</code>）或匯入 CSV／備份檔時，檔案僅透過系統原生的檔案選擇器（Android Storage Access Framework / iOS Document Picker）由您本人指定本機或個人雲端硬碟路徑讀寫。</li>
+          <li><code>.passmbak</code> 備份檔採用 <code>PBKDF2-HMAC-SHA256</code>（1,200,000 次迭代）與 <code>AES-256-GCM</code> 加密，開發者無法存取或解密您的備份檔案。</li>
+        </ul>
+
+        <h2>4. 應用程式內購買（PassM Pro）</h2>
+        <ul>
+          <li>PassM Pro 永久買斷升級之付款與收據驗證，完全由官方應用商店（Apple App Store <code>StoreKit 2</code> / Google Play <code>BillingClient</code>）直接處理。</li>
+          <li>開發者不會經手或儲存您的信用卡號或付款帳單明細；App 僅於本機硬體安全區域保存經商店數位簽章驗證後的授權狀態與交易識別碼（<code>orderId</code> / <code>originalID</code>），以支援離線使用與購買恢復。</li>
+        </ul>
+
+        <h2>5. 使用者自主權與資料刪除</h2>
+        <p>由於所有資料皆僅存於您的裝置本機：</p>
+        <ul>
+          <li>您可隨時於 App 內檢視、編輯、匯出或刪除任何項目。</li>
+          <li>若您於 App 內執行「重設密碼庫（Reset Vault）」或直接從裝置卸載 PassM，本地加密資料庫將從裝置儲存空間中移除（iOS 使用者如需一併清除 Keychain 封印材料，請於卸載前使用解鎖畫面之 <code>RESET</code> 重設功能）。</li>
+        </ul>
+
+        <h2>6. 聯絡我們</h2>
+        <p>若您對本隱私權政策或產品安全性有任何疑問，請透過以下公開管道聯繫我們（<strong>切勿在信件或問題單中提供您的主密碼或 <code>.passmbak</code> 備份檔</strong>）：</p>
+        <ul>
+          <li><strong>客戶支援中心</strong>：<a href="./support.html">https://aomeios.github.io/passm-support/support.html</a></li>
+          <li><strong>公開問題回報（GitHub Issues）</strong>：<a href="https://github.com/aomeios/passm-support/issues" target="_blank" rel="noopener noreferrer">https://github.com/aomeios/passm-support/issues</a></li>
+          <li><strong>聯絡信箱</strong>：<a href="mailto:coolcrist@gmail.com">coolcrist@gmail.com</a></li>
+        </ul>
+      </article>
+
+      <!-- English -->
+      <article class="prose" data-lang="en">
+        <h2>1. Core Privacy Commitment: 100% Local Offline Processing, Zero Data Collection</h2>
+        <p>PassM is a strictly offline, zero-knowledge local password and secret manager. <strong>We do not own, operate, or use any backend servers capable of receiving your vault data.</strong></p>
+        <ul>
+          <li><strong>No Personal Data Collected</strong>: PassM requires no user account and does not collect, store, or transmit your name, email address, phone number, device identifiers, or location data.</li>
+          <li><strong>No Vault Data Transmitted</strong>: All passwords, TOTP seeds, credit card details, secure notes, and checklists remain exclusively within your device's local sandbox.</li>
+          <li><strong>No Tracking or Ad SDKs</strong>: PassM (and this official website) contains zero third-party analytics, telemetry, advertising, or automatic crash-reporting SDKs.</li>
+          <li><strong>Zero Network Permissions on Android</strong>: The Android release explicitly strips <code>android.permission.INTERNET</code> and <code>android.permission.ACCESS_NETWORK_STATE</code> in <code>AndroidManifest.xml</code>, ensuring at the OS level that the app cannot initiate network connections.</li>
+        </ul>
+
+        <h2>2. Local Encryption &amp; Hardware-Backed Security</h2>
+        <ol>
+          <li><strong>Master Password Derivation &amp; Device Binding</strong>: Your Master Password is never stored on disk. Keys are derived locally using <code>PBKDF2-HMAC-SHA256</code> (600,000 iterations) and <code>HKDF-SHA256</code> combined with a 32-byte hardware-protected Device Secret stored in Android Keystore or iOS Keychain.</li>
+          <li><strong>Dual-Layer Encryption</strong>: The vault database is encrypted with SQLCipher (<code>AES-256</code>), and sensitive secret fields (<code>password</code>, <code>secret_extras</code>) are additionally sealed with <code>AES-256-GCM</code> bound to a 34-byte Authenticated Associated Data (AAD) header.</li>
+          <li><strong>Biometric Authentication</strong>: Fingerprint, Face ID, and Touch ID checks are performed strictly by the operating system (<code>BiometricPrompt</code> / <code>LocalAuthentication</code>). PassM never accesses raw biometric templates.</li>
+        </ol>
+
+        <h2>3. Backups (.passmbak) &amp; File Imports</h2>
+        <ul>
+          <li>Exporting <code>.passmbak</code> backups or importing CSV/backup files uses the system file picker (Android SAF / iOS Document Picker) to read or write only the specific file you select.</li>
+          <li><code>.passmbak</code> files are encrypted locally with <code>PBKDF2-HMAC-SHA256</code> (1,200,000 iterations) and <code>AES-256-GCM</code>.</li>
+        </ul>
+
+        <h2>4. In-App Purchases (PassM Pro)</h2>
+        <ul>
+          <li>PassM Pro lifetime unlock transactions are processed directly by Apple App Store (<code>StoreKit 2</code>) or Google Play (<code>BillingClient</code>).</li>
+          <li>We never receive your payment card details. PassM stores only the cryptographically verified entitlement status and transaction identifier (<code>orderId</code> / <code>originalID</code>) in local hardware-backed storage for offline access and purchase restoration.</li>
+        </ul>
+
+        <h2>5. User Control &amp; Data Deletion</h2>
+        <ul>
+          <li>Because all vault data resides exclusively on your device, you can view, edit, export, or delete any item at any time inside the app.</li>
+          <li>Using "Reset Vault" inside PassM (typing <code>RESET</code> on the iOS Unlock screen) or uninstalling the application permanently removes your local encrypted database from device storage.</li>
+        </ul>
+
+        <h2>6. Contact Us</h2>
+        <p>If you have any questions regarding this Privacy Policy, please contact us (<strong>never include your Master Password or <code>.passmbak</code> backup files</strong>):</p>
+        <ul>
+          <li><strong>Support Center</strong>: <a href="./support.html">https://aomeios.github.io/passm-support/support.html</a></li>
+          <li><strong>Issue Tracker</strong>: <a href="https://github.com/aomeios/passm-support/issues" target="_blank" rel="noopener noreferrer">https://github.com/aomeios/passm-support/issues</a></li>
+          <li><strong>Email</strong>: <a href="mailto:coolcrist@gmail.com">coolcrist@gmail.com</a></li>
+        </ul>
+      </article>
+
+      <!-- Japanese -->
+      <article class="prose" data-lang="ja">
+        <h2>1. プライバシーに関する基本方針：完全ローカル・オフライン動作、データ収集ゼロ</h2>
+        <p>PassM は完全オフライン・ゼロ知識（Zero-Knowledge）設計のローカルパスワード管理アプリです。<strong>開発者は、お客様の保管庫データを受信するサーバーを一切保有・運用していません。</strong></p>
+        <ul>
+          <li><strong>個人情報の収集なし</strong>：アカウント登録は不要であり、氏名、メールアドレス、電話番号、端末識別子、位置情報などを収集・送信することは一切ありません。</li>
+          <li><strong>保管庫データの外部送信なし</strong>：パスワード、TOTP シード、クレジットカード情報、セキュアメモ、チェックリストはすべてお使いの端末内にのみ保存されます。</li>
+          <li><strong>追跡・広告 SDK なし</strong>：PassM（および当公式サイト）には第三者の分析（Analytics）、広告、自動クラッシュ送信 SDK は一切含まれていません。</li>
+          <li><strong>Android 版の通信権限ゼロ</strong>：Android 版では <code>AndroidManifest.xml</code> から <code>INTERNET</code> および <code>ACCESS_NETWORK_STATE</code> 権限を完全に削除しており、OS レベルで外部通信が遮断されています。</li>
+        </ul>
+
+        <h2>2. ローカル暗号化とハードウェア保護</h2>
+        <ul>
+          <li>マスターパスワードは端末内に保存されず、<code>PBKDF2-HMAC-SHA256</code>（600,000 回反復）および <code>HKDF-SHA256</code> と Android Keystore / iOS Keychain 内の 32 バイト Device Secret を組み合わせて鍵を導出します。</li>
+          <li>データベース全体は SQLCipher（<code>AES-256</code>）で暗号化され、機密フィールドはさらに 34 バイト AAD 付きの <code>AES-256-GCM</code> で二重に暗号化されます。</li>
+          <li>Face ID / Touch ID / 指紋認証は OS 標準機能により端末内でのみ処理され、PassM が生体情報そのものにアクセスすることはありません。</li>
+        </ul>
+
+        <h2>3. バックアップ（.passmbak）およびデータの削除</h2>
+        <ul>
+          <li><code>.passmbak</code> バックアップは <code>PBKDF2-HMAC-SHA256</code>（1,200,000 回反復）および <code>AES-256-GCM</code> で暗号化され、OS 標準のファイル選択機能を通じてお客様ご自身が指定した保存先にのみ出力されます。</li>
+          <li>すべてのデータは端末内にのみ存在するため、アプリ内の初期化機能（iOS ロック解除画面での <code>RESET</code> 実行）またはアンインストールによりいつでも消去できます。</li>
+        </ul>
+
+        <h2>4. アプリ内課金（PassM Pro）とお問い合わせ</h2>
+        <ul>
+          <li>PassM Pro（買い切り）の決済は Apple App Store（<code>StoreKit 2</code>）または Google Play（<code>BillingClient</code>）によって直接処理され、開発者が決済情報を取得することはありません。</li>
+          <li>お問い合わせ先（<strong>マスターパスワードや <code>.passmbak</code> バックアップファイルは絶対に送信しないでください</strong>）：
+            <ul>
+              <li><strong>サポートセンター</strong>：<a href="./support.html">https://aomeios.github.io/passm-support/support.html</a></li>
+              <li><strong>GitHub Issues</strong>：<a href="https://github.com/aomeios/passm-support/issues" target="_blank" rel="noopener noreferrer">https://github.com/aomeios/passm-support/issues</a></li>
+              <li><strong>メール</strong>：<a href="mailto:coolcrist@gmail.com">coolcrist@gmail.com</a></li>
+            </ul>
+          </li>
+        </ul>
+      </article>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>© 2026 Chris Su · PassM Local Password Vault. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="./index.html">
+          <span data-lang="zh">首頁</span><span data-lang="en">Home</span><span data-lang="ja">ホーム</span>
+        </a>
+        <a href="./support.html">
+          <span data-lang="zh">客戶支援與 FAQ</span><span data-lang="en">Support &amp; FAQ</span><span data-lang="ja">サポート・FAQ</span>
+        </a>
+        <a href="./privacy.html">
+          <span data-lang="zh">隱私權政策</span><span data-lang="en">Privacy Policy</span><span data-lang="ja">プライバシーポリシー</span>
+        </a>
+        <a href="https://github.com/aomeios/passm-support/issues" target="_blank" rel="noopener noreferrer">GitHub Issues</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

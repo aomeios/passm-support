@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" data-active-lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self';">
+  <title>PassM — 100% Offline Hardware-Encrypted Password Vault</title>
+  <meta name="description" content="PassM is a 100% offline, zero-knowledge hardware-encrypted password, TOTP 2FA, credit card, and secure note vault for iOS and Android. No cloud, no subscriptions.">
+  <link rel="icon" type="image/png" href="./assets/favicon.png">
+  <link rel="apple-touch-icon" href="./assets/icon.png">
+  <link rel="stylesheet" href="./assets/styles.css">
+  <script src="./assets/site.js" defer></script>
+</head>
+<body>
+  <header class="navbar">
+    <div class="nav-inner">
+      <a href="./index.html" class="brand">
+        <img src="./assets/icon.png" alt="PassM Icon">
+        <span>PassM</span>
+        <span class="brand-badge">Zero-Cloud</span>
+      </a>
+      <nav class="nav-links">
+        <a href="./index.html" class="active">
+          <span data-lang="zh">產品首頁</span>
+          <span data-lang="en">Overview</span>
+          <span data-lang="ja">ホーム</span>
+        </a>
+        <a href="#security">
+          <span data-lang="zh">安全架構</span>
+          <span data-lang="en">Security</span>
+          <span data-lang="ja">暗号化設計</span>
+        </a>
+        <a href="#pricing">
+          <span data-lang="zh">方案定價</span>
+          <span data-lang="en">Pricing</span>
+          <span data-lang="ja">料金プラン</span>
+        </a>
+        <a href="./support.html">
+          <span data-lang="zh">技術支援與 FAQ</span>
+          <span data-lang="en">Support &amp; FAQ</span>
+          <span data-lang="ja">サポート・FAQ</span>
+        </a>
+        <a href="./privacy.html">
+          <span data-lang="zh">隱私權政策</span>
+          <span data-lang="en">Privacy Policy</span>
+          <span data-lang="ja">プライバシーポリシー</span>
+        </a>
+      </nav>
+      <div class="lang-switcher" role="group" aria-label="Language Switcher">
+        <button type="button" class="lang-btn active" data-set-lang="zh">繁中</button>
+        <button type="button" class="lang-btn" data-set-lang="en">EN</button>
+        <button type="button" class="lang-btn" data-set-lang="ja">日本語</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <img src="./assets/icon.png" alt="PassM Vault Shield" class="hero-icon">
+        <div>
+          <span class="eyebrow">
+            <span data-lang="zh">🛡️ 零伺服器・零帳號・零月費訂閱</span>
+            <span data-lang="en">🛡️ Zero Servers · Zero Accounts · Zero Subscriptions</span>
+            <span data-lang="ja">🛡️ サーバーなし・アカウント不要・サブスクなし</span>
+          </span>
+        </div>
+
+        <h1 data-lang="zh">把數位鑰匙鎖回你自己的<br><span class="gold-text">本機硬體安全晶片</span></h1>
+        <h1 data-lang="en">Keep Your Secrets Locked in<br><span class="gold-text">Your Own Device Hardware</span></h1>
+        <h1 data-lang="ja">大切な認証情報を、あなた自身の<br><span class="gold-text">端末ハードウェア暗号領域へ</span></h1>
+
+        <p class="hero-sub" data-lang="zh">
+          PassM 是專為極致隱私主義者打造的 iOS / iPadOS / Android 離線密碼庫。採用雙層硬體綁定加密（SQLCipher AES-256 ＋ 欄位級 AES-GCM），資料永不離開你的手機。
+        </p>
+        <p class="hero-sub" data-lang="en">
+          PassM is a strictly offline password, 2FA TOTP, payment card, and secure note vault for iOS, iPadOS, and Android. Protected by dual-layer hardware-bound encryption — your vault never touches the cloud.
+        </p>
+        <p class="hero-sub" data-lang="ja">
+          PassM は iOS / iPadOS / Android 向けの完全オフライン型パスワード管理アプリです。SQLCipher AES-256 とフィールド単位の AES-GCM 二重暗号化により、データは端末の外へ一切出ません。
+        </p>
+
+        <div class="cta-row">
+          <a class="btn btn-gold" href="https://apps.apple.com/app/id6835392141" target="_blank" rel="noopener noreferrer">
+            <span data-lang="zh"> 於 App Store 下載 (iOS / iPadOS)</span>
+            <span data-lang="en"> Download on the App Store</span>
+            <span data-lang="ja"> App Store で入手 (iOS / iPadOS)</span>
+          </a>
+          <a class="btn btn-outline" href="./support.html">
+            <span data-lang="zh">客戶支援與常見問題 ➔</span>
+            <span data-lang="en">Support Center &amp; FAQ ➔</span>
+            <span data-lang="ja">サポートセンター・FAQ ➔</span>
+          </a>
+        </div>
+
+        <div class="trust-strip">
+          <div class="trust-pill">
+            <strong>100% Offline</strong>
+            <span data-lang="zh">無雲端後端，Android 版移除實體網路權限</span>
+            <span data-lang="en">No backend servers; zero network permission on Android</span>
+            <span data-lang="ja">クラウドなし・Android版は通信権限を完全削除</span>
+          </div>
+          <div class="trust-pill">
+            <strong>600,000 PBKDF2</strong>
+            <span data-lang="zh">高強度金鑰衍生結合 32B 硬體機密綁定</span>
+            <span data-lang="en">PBKDF2-HMAC-SHA256 + 32B hardware Device Secret</span>
+            <span data-lang="ja">60万回 PBKDF2 + 32B ハードウェア秘密鍵バインド</span>
+          </div>
+          <div class="trust-pill">
+            <strong>0 SDK Telemetry</strong>
+            <span data-lang="zh">零廣告、零追蹤器、連本官網皆零外部請求</span>
+            <span data-lang="en">Zero analytics, zero ad SDKs, zero web trackers</span>
+            <span data-lang="ja">広告・追跡 SDK ゼロ（当サイトも外部通信ゼロ）</span>
+          </div>
+          <div class="trust-pill">
+            <strong>$9.99 Lifetime</strong>
+            <span data-lang="zh">免費享 100 筆全功能，一次買斷終身無限容量</span>
+            <span data-lang="en">Free up to 100 items forever; one-time Pro unlock</span>
+            <span data-lang="ja">100件まで永久無料・買い切りで無制限解放</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Capabilities -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 data-lang="zh">全方位的本地私密資產管理</h2>
+          <h2 data-lang="en">Complete Local Secret Management</h2>
+          <h2 data-lang="ja">あらゆる機密情報をこれひとつで安全管理</h2>
+          <p data-lang="zh">不只是帳號密碼，日常所需的雙重驗證碼、支付卡片與私密清單皆可離線妥善封存。</p>
+          <p data-lang="en">Store logins, 2FA codes, payment cards, encrypted notes, and interactive checklists in one unified vault.</p>
+          <p data-lang="ja">ログイン情報、二段階認証コード、カード、暗号化メモ、チェックリストを一元管理。</p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <div class="card-icon">🔑</div>
+            <h3 data-lang="zh">防釣魚系統自動填寫</h3>
+            <h3 data-lang="en">Anti-Phishing System AutoFill</h3>
+            <h3 data-lang="ja">フィッシング対策済み自動入力</h3>
+            <p data-lang="zh">原生整合 iOS Safari Credential Provider 與 Android AutofillService，嚴格核對 HTTPS 標準網域與 APK 簽章釘選，防止惡意偽冒網站竊取憑證。</p>
+            <p data-lang="en">Native iOS Credential Provider and Android AutofillService with strict canonical HTTPS host matching and TOFU app signature pinning.</p>
+            <p data-lang="ja">iOS Safari 拡張機能と Android 自動入力にネイティブ対応。厳格な HTTPS ドメイン照合と署名ピン留めで偽サイトをブロック。</p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">⏱️</div>
+            <h3 data-lang="zh">內建離線 TOTP 動態驗證碼</h3>
+            <h3 data-lang="en">Built-in Offline TOTP 2FA</h3>
+            <h3 data-lang="ja">オフライン TOTP 二段階認証</h3>
+            <p data-lang="zh">遵循 RFC 6238 標準於本機即時運算 6 碼／8 碼動態驗證碼，種子陣列運算後立即自記憶體清零，無須額外切換驗證器 App。</p>
+            <p data-lang="en">RFC 6238 compliant 2FA code generator calculated entirely offline, zeroizing secret seed buffers immediately after each render.</p>
+            <p data-lang="ja">RFC 6238 準拠の二段階認証コードを完全オフラインで生成。計算直後にメモリ上のシードをゼロ消去します。</p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">💳</div>
+            <h3 data-lang="zh">信用卡、安全筆記與檢查清單</h3>
+            <h3 data-lang="en">Cards, Notes &amp; Checklists</h3>
+            <h3 data-lang="ja">カード・メモ・チェックリスト</h3>
+            <p data-lang="zh">支援 Luhn 卡號校驗與前六後四遮罩，CVV / PIN 與萬字安全筆記、互動式勾選清單皆獨立封裝於第二層 AES-GCM 密文欄位。</p>
+            <p data-lang="en">Manage payment cards (masked display + encrypted CVV/PIN), 10,000-char encrypted notes, and interactive security checklists.</p>
+            <p data-lang="ja">クレジットカード（CVV/PIN 個別暗号化）、最大1万文字のセキュアメモ、対話型チェックリストに標準対応。</p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">🛡️</div>
+            <h3 data-lang="zh">100% 離線密碼健康度審計</h3>
+            <h3 data-lang="en">100% Offline Security Audit</h3>
+            <h3 data-lang="ja">完全オフラインのセキュリティ診断</h3>
+            <p data-lang="zh">在裝置端掃描弱密碼、重複使用密碼、過期密碼與未啟用 2FA 的帳號並給予健康度評分，絕不將任何密碼雜湊傳送至外部 API。</p>
+            <p data-lang="en">Detect weak, reused, old passwords, and accounts missing 2FA entirely on-device without querying external breach servers.</p>
+            <p data-lang="ja">弱いパスワード・使い回し・古いパスワード・2FA未設定を端末内だけで瞬時に診断しスコア化します。</p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">🧬</div>
+            <h3 data-lang="zh">雙金鑰分離生物辨識快速解鎖</h3>
+            <h3 data-lang="en">Hardware Biometric Quick Unlock</h3>
+            <h3 data-lang="ja">生体認証による高速ロック解除</h3>
+            <p data-lang="zh">支援 Face ID、Touch ID 與指紋辨識，強制綁定當前生物特徵集合（BiometryCurrentSet）；一旦系統新增未知指紋或臉孔即自動失效退回主密碼。</p>
+            <p data-lang="en">Dedicated biometric unlock key bound to your current enrollment set — automatically invalidated if new biometrics are enrolled on the device.</p>
+            <p data-lang="ja">Face ID / Touch ID / 指紋認証に対応。端末の生体情報が変更された場合は自動的に無効化されマスターパスワードを要求します。</p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">📦</div>
+            <h3 data-lang="zh">跨平台加密備份（.passmbak）</h3>
+            <h3 data-lang="en">Cross-Platform Encrypted Backup</h3>
+            <h3 data-lang="ja">OS間対応の暗号化バックアップ</h3>
+            <p data-lang="zh">採用 1,200,000 次 PBKDF2-HMAC-SHA256 與 AES-256-GCM（60B Header AAD）封裝，可在 iOS 與 Android 間安全無損遷移，亦支援 Chrome / Bitwarden CSV 匯入。</p>
+            <p data-lang="en">Portable <code>.passmbak</code> archives sealed with 1,200,000-iteration PBKDF2 + AES-256-GCM for seamless migration between iOS and Android.</p>
+            <p data-lang="ja">120万回反復 PBKDF2 + AES-256-GCM で保護された <code>.passmbak</code> により、iOS と Android 間で安全にデータ移行が可能。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Security Architecture -->
+    <section id="security" class="section">
+      <div class="container">
+        <div class="arch-box">
+          <div class="section-header" style="margin-bottom: 18px;">
+            <h2 data-lang="zh">縱深防禦密碼學架構</h2>
+            <h2 data-lang="en">Defense-in-Depth Cryptography</h2>
+            <h2 data-lang="ja">多層防御の暗号アーキテクチャ</h2>
+            <p data-lang="zh">主密碼（Master Password）全程以可清零字元緩衝區處理，永不寫入磁碟，並經過四道隔離衍生程序保護您的資料庫。</p>
+            <p data-lang="en">Your Master Password exists only in zeroizable character buffers in RAM and never touches persistent storage.</p>
+            <p data-lang="ja">マスターパスワードはゼロ消去可能なメモリバッファ上でのみ処理され、ストレージには一切保存されません。</p>
+          </div>
+
+          <div class="kdf-steps">
+            <div class="kdf-step">
+              <div class="step-num">Layer 01 · KDF</div>
+              <h4 data-lang="zh">主密碼抗暴力衍生</h4>
+              <h4 data-lang="en">Key Stretching</h4>
+              <h4 data-lang="ja">鍵導出（ストレッチング）</h4>
+              <p data-lang="zh"><code>PBKDF2-HMAC-SHA256</code> 600,000 次迭代搭配 32-byte CSPRNG 鹽值，並內建單調時鐘指數退避防爆破帳本。</p>
+              <p data-lang="en"><code>PBKDF2-HMAC-SHA256</code> (600,000 iterations, 32B CSPRNG salt) paired with monotonic exponential backoff throttling.</p>
+              <p data-lang="ja"><code>PBKDF2-HMAC-SHA256</code>（60万回反復・32B乱数ソルト）と単調時計ベースの指数バックオフ制限。</p>
+            </div>
+            <div class="kdf-step">
+              <div class="step-num">Layer 02 · Hardware Binding</div>
+              <h4 data-lang="zh">職責分離與裝置晶片綁定</h4>
+              <h4 data-lang="en">Hardware Secret Binding</h4>
+              <h4 data-lang="ja">ハードウェア秘密鍵結合</h4>
+              <p data-lang="zh">透過 <code>HKDF-SHA256</code> 分離驗證金鑰與資料庫金鑰，並混入 iOS Keychain / Android Keystore 保護之 32B Device Secret。</p>
+              <p data-lang="en"><code>HKDF-SHA256</code> domain separation mixed with a 32-byte Device Secret sealed in iOS Keychain / Android Keystore.</p>
+              <p data-lang="ja"><code>HKDF-SHA256</code> による鍵分離と、Keychain / Keystore 内の 32B Device Secret との結合。</p>
+            </div>
+            <div class="kdf-step">
+              <div class="step-num">Layer 03 · Full-DB Cipher</div>
+              <h4 data-lang="zh">第一層：SQLCipher 全庫加密</h4>
+              <h4 data-lang="en">Tier 1: SQLCipher AES-256</h4>
+              <h4 data-lang="ja">第1層：SQLCipher 全体暗号化</h4>
+              <p data-lang="zh">強制 Raw Key 模式加密整座 SQLite 資料庫與 WAL 日誌，App 退背景到期或鎖屏時自動同步銷毀連線金鑰。</p>
+              <p data-lang="en">Full database &amp; WAL encryption in raw-key mode; memory keys are zeroized immediately on lock or screen-off.</p>
+              <p data-lang="ja">Raw Key モードによるデータベース全体の AES-256 暗号化。ロック時にメモリ上の鍵を即時消去。</p>
+            </div>
+            <div class="kdf-step">
+              <div class="step-num">Layer 04 · Bound Field AAD</div>
+              <h4 data-lang="zh">第二層：欄位級 AAD 認證加密</h4>
+              <h4 data-lang="en">Tier 2: Per-Field AES-GCM</h4>
+              <h4 data-lang="ja">第2層：フィールド単位 AES-GCM</h4>
+              <p data-lang="zh">密碼、CVV/PIN 與安全筆記再以 <code>AES-256-GCM</code> 綁定 34-byte AAD（VaultId + ItemId + ColumnId）防篡改與防跨欄置換。</p>
+              <p data-lang="en">Sensitive secrets are individually sealed with <code>AES-256-GCM</code> bound to 34-byte AAD (VaultId + ItemId + ColumnId).</p>
+              <p data-lang="ja">パスワードや CVV、メモは 34B AAD（VaultId + ItemId + ColumnId）付き <code>AES-256-GCM</code> で個別封印。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 data-lang="zh">透明買斷制，絕不綁架你的資料</h2>
+          <h2 data-lang="en">Honest One-Time Pricing. Zero Lock-In.</h2>
+          <h2 data-lang="ja">誠実な買い切り制。データのロックインなし。</h2>
+          <p data-lang="zh">無廣告、無隱藏訂閱陷阱。免費版即享完整密碼學保護與全功能體驗。</p>
+          <p data-lang="en">No ads, no recurring fees. Every cryptographic protection is included in the Free Tier.</p>
+          <p data-lang="ja">広告なし・月額課金なし。無料プランでもすべての暗号化保護と機能をご利用いただけます。</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3 data-lang="zh">PassM 免費版（Free Tier）</h3>
+            <h3 data-lang="en">PassM Free Tier</h3>
+            <h3 data-lang="ja">PassM 無料プラン（Free Tier）</h3>
+            <div class="price-tag">$0</div>
+            <div class="price-note">
+              <span data-lang="zh">永久免費・無試用期限制</span>
+              <span data-lang="en">Free forever · No trial expiration</span>
+              <span data-lang="ja">永久無料・試用期間制限なし</span>
+            </div>
+            <ul class="check-list">
+              <li>
+                <span data-lang="zh">最多儲存 <strong>100 筆</strong>項目（涵蓋登入、信用卡、安全筆記、檢查清單）</span>
+                <span data-lang="en">Store up to <strong>100 items</strong> across Logins, Cards, Notes, and Checklists</span>
+                <span data-lang="ja">最大 <strong>100 件</strong>まで保存可能（ログイン・カード・メモ・チェックリスト）</span>
+              </li>
+              <li>
+                <span data-lang="zh">完整支援系統 AutoFill、離線 TOTP 2FA、密碼產生器與離線安全審計</span>
+                <span data-lang="en">Full AutoFill, offline TOTP 2FA, CSPRNG Password Generator &amp; Security Audit</span>
+                <span data-lang="ja">自動入力・オフライン TOTP・パスワード生成・セキュリティ診断に完全対応</span>
+              </li>
+              <li>
+                <span data-lang="zh"><strong>軟性上限絕不鎖庫承諾</strong>：達 100 筆後既有資料永久可檢視、編輯、複製、AutoFill 與匯出備份</span>
+                <span data-lang="en"><strong>Soft-Cap No-Lockout Guarantee</strong>: existing items remain forever readable, editable &amp; exportable</span>
+                <span data-lang="ja"><strong>データ人質化ゼロ保証</strong>：100件到達後も既存データの閲覧・編集・自動入力・バックアップ出力が永久可能</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="card card-highlight">
+            <h3 data-lang="zh">PassM Pro 永久專業版</h3>
+            <h3 data-lang="en">PassM Pro Lifetime</h3>
+            <h3 data-lang="ja">PassM Pro 買い切り版（Lifetime）</h3>
+            <div class="price-tag">$9.99 <span style="font-size: 1rem; font-weight: 500; color: var(--text-secondary);">USD</span></div>
+            <div class="price-note">
+              <span data-lang="zh">一次買斷・終身有效・支援同平台換機恢復購買</span>
+              <span data-lang="en">One-time purchase · Own forever · Restore across devices</span>
+              <span data-lang="ja">1回の買い切り・追加費用なし・機種変更時の購入復元に対応</span>
+            </div>
+            <ul class="check-list">
+              <li>
+                <span data-lang="zh">永久解鎖 <strong>無限筆數</strong> 密碼庫儲存空間（突破 100 筆上限）</span>
+                <span data-lang="en">Unlock <strong>Unlimited Vault Items</strong> forever (beyond the 100-item Free cap)</span>
+                <span data-lang="ja">保管庫の保存容量が <strong>無制限</strong> に（100件の上限を永久解除）</span>
+              </li>
+              <li>
+                <span data-lang="zh">包含免費版全部離線硬體加密、TOTP 2FA、審計與 <code>.passmbak</code> 備份功能</span>
+                <span data-lang="en">Includes all hardware-backed encryption, offline TOTP, audit, and <code>.passmbak</code> features</span>
+                <span data-lang="ja">すべてのハードウェア暗号化・TOTP・診断・暗号化バックアップ機能を網羅</span>
+              </li>
+              <li>
+                <span data-lang="zh">官方商店原生驗證（Apple StoreKit 2 / Google Play Billing）保護隱私，不收集任何付款卡號</span>
+                <span data-lang="en">Verified natively via Apple StoreKit 2 / Google Play Billing with local offline entitlement caching</span>
+                <span data-lang="ja">App Store / Google Play 公式決済で安全に処理（開発者は決済情報を一切取得しません）</span>
+              </li>
+            </ul>
+            <div style="margin-top: 24px;">
+              <a class="btn btn-gold" style="width: 100%;" href="https://apps.apple.com/app/id6835392141" target="_blank" rel="noopener noreferrer">
+                <span data-lang="zh">立即於 App Store 取得 PassM</span>
+                <span data-lang="en">Get PassM on the App Store</span>
+                <span data-lang="ja">App Store で PassM をダウンロード</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>© 2026 Chris Su · PassM Local Password Vault. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="./index.html">
+          <span data-lang="zh">首頁</span><span data-lang="en">Home</span><span data-lang="ja">ホーム</span>
+        </a>
+        <a href="./support.html">
+          <span data-lang="zh">客戶支援與 FAQ</span><span data-lang="en">Support &amp; FAQ</span><span data-lang="ja">サポート・FAQ</span>
+        </a>
+        <a href="./privacy.html">
+          <span data-lang="zh">隱私權政策</span><span data-lang="en">Privacy Policy</span><span data-lang="ja">プライバシーポリシー</span>
+        </a>
+        <a href="https://github.com/aomeios/passm-support/issues" target="_blank" rel="noopener noreferrer">GitHub Issues</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
