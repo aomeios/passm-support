@@ -1,6 +1,6 @@
 # PassM 隱私權政策 (Privacy Policy / プライバシーポリシー)
 
-**最後更新日期 / Last Updated / 最終更新日**：2026-10-26  
+**最後更新日期 / Last Updated / 最終更新日**：2026-11-26  
 **適用產品 / Applicable Product**：PassM（iOS / Android）
 
 ---
@@ -20,9 +20,10 @@ PassM 是一款純離線、零知識（Zero-Knowledge）的本地密碼與私密
 2. **雙層資料庫與欄位加密**：底層採用 SQLCipher（AES-256）全庫加密；密碼與敏感附加欄位（`secret_extras`）另以 `AES-256-GCM` 搭配 34-byte 關聯認證資料（AAD）進行第二層獨立封裝。
 3. **生物辨識驗證**：當您啟用指紋、Face ID 或 Touch ID 快速解鎖時，生物特徵驗證完全由 Android 作業系統或 iOS LocalAuthentication / Secure Enclave 在本機執行；PassM 僅讀取硬體授權狀態，絕無法存取您的生物特徵原始資料。
 
-### 3. 備份檔案（`.passmbak`）與匯入資料處理
+### 3. 備份檔案（`.passmbak`）、離線備份健康度提醒與匯入資料處理
 - 當您使用匯出加密備份（`.passmbak`）或匯入 CSV／備份檔時，檔案僅透過系統原生的檔案選擇器（Android Storage Access Framework / iOS Document Picker）由您本人指定本機或個人雲端硬碟路徑讀寫。
 - `.passmbak` 備份檔採用 `PBKDF2-HMAC-SHA256`（1,200,000 次迭代）與 `AES-256-GCM` 加密，開發者無法存取或解密您的備份檔案。
+- **離線備份健康度提醒零外傳承諾**：離線備份健康度提醒（上次備份時間戳、未備份變更計數、靜音時間與提醒頻率偏好）**100% 於裝置本機硬體安全區域（Android Keystore / iOS Keychain）封印儲存並純離線評估，絕不使用任何遠端推播伺服器、背景網路連線或行為分析追蹤**，並於執行重設密碼庫時同步清除。
 
 ### 4. 應用程式內購買（PassM Pro）
 - PassM Pro 永久買斷升級之付款與收據驗證，完全由官方應用商店（Apple App Store `StoreKit 2` / Google Play `BillingClient`）直接處理。
@@ -55,15 +56,20 @@ PassM is a strictly offline, zero-knowledge local password and secret manager. *
 2. **Dual-Layer Encryption**: The vault database is encrypted with SQLCipher (`AES-256`), and sensitive secret fields (`password`, `secret_extras`) are additionally sealed with `AES-256-GCM` bound to a 34-byte Authenticated Associated Data (AAD) header.
 3. **Biometric Authentication**: Fingerprint, Face ID, and Touch ID checks are performed strictly by the operating system (`BiometricPrompt` / `LocalAuthentication`). PassM never accesses raw biometric templates.
 
-### 3. Backups (`.passmbak`) & File Imports
+### 3. Backups (`.passmbak`), Offline Backup Health Reminders & File Imports
 - Exporting `.passmbak` backups or importing CSV/backup files uses the system file picker (Android SAF / iOS Document Picker) to read or write only the specific file you select.
 - `.passmbak` files are encrypted locally with `PBKDF2-HMAC-SHA256` (1,200,000 iterations) and `AES-256-GCM`.
+- **100% Local Backup Health Reminders**: Offline backup health reminder metadata (last backup timestamp, unsaved change count, snooze timestamp, and reminder interval preference) is **100% sealed inside local device hardware-backed security storage (Android Keystore / iOS Keychain) and evaluated strictly offline — never using remote push servers, background network connections, or behavioral analytics tracking**, and is cleared whenever the vault is reset.
 
 ### 4. In-App Purchases (PassM Pro)
 - PassM Pro lifetime unlock transactions are processed directly by Apple App Store (`StoreKit 2`) or Google Play (`BillingClient`).
 - We never receive your payment card details. PassM stores only the cryptographically verified entitlement status and transaction identifier (`orderId` / `originalID`) in local hardware-backed storage for offline access and purchase restoration.
 
-### 5. Contact Us
+### 5. User Control & Data Deletion
+- Because all vault data resides exclusively on your device, you can view, edit, export, or delete any item at any time inside the app.
+- Using "Reset Vault" inside PassM (typing `RESET` on the iOS Unlock screen) or uninstalling the application permanently removes your local encrypted database from device storage.
+
+### 6. Contact Us
 If you have any questions regarding this Privacy Policy, please contact us (**never include your Master Password or `.passmbak` backup files**):
 - **Support Page**: `https://github.com/aomeios/passm-support/blob/main/SUPPORT.md`
 - **Issue Tracker**: `https://github.com/aomeios/passm-support/issues`
@@ -84,7 +90,12 @@ PassM は完全オフライン・ゼロ知識（Zero-Knowledge）設計のロー
 - マスターパスワードは端末内に保存されず、`PBKDF2-HMAC-SHA256`（600,000 回反復）および `HKDF-SHA256` と Android Keystore / iOS Keychain 内の 32 バイト Device Secret を組み合わせて鍵を導出します。
 - データベース全体は SQLCipher（`AES-256`）で暗号化され、機密フィールドはさらに 34 バイト AAD 付きの `AES-256-GCM` で二重に暗号化されます。
 
-### 3. アプリ内課金（PassM Pro）とお問い合わせ
+### 3. バックアップ（`.passmbak`）・オフラインバックアップ通知およびデータの削除
+- `.passmbak` バックアップは `PBKDF2-HMAC-SHA256`（1,200,000 回反復）および `AES-256-GCM` で暗号化され、OS 標準のファイル選択機能を通じてお客様ご自身が指定した保存先にのみ出力されます。
+- **オフラインバックアップ健全性通知の完全ローカル処理**：前回バックアップ日時や未バックアップ変更件数などの通知状態は、**100% 端末内のハードウェア保護領域（Android Keystore / iOS Keychain）に封印保存され完全オフラインで判定されます。外部プッシュ通知サーバー、バックグラウンド通信、行動分析トラッキングは一切使用せず**、保管庫の初期化時には同時に消去されます。
+- すべてのデータは端末内にのみ存在するため、アプリ内の初期化機能（iOS ロック解除画面での `RESET` 実行）またはアンインストールによりいつでも消去できます。
+
+### 4. アプリ内課金（PassM Pro）とお問い合わせ
 - PassM Pro（買い切り）の決済は Apple App Store（`StoreKit 2`）または Google Play（`BillingClient`）によって直接処理され、開発者が決済情報を取得することはありません。
 - お問い合わせ先（**マスターパスワードや `.passmbak` バックアップファイルは絶対に送信しないでください**）：
   - **サポートページ**：`https://github.com/aomeios/passm-support/blob/main/SUPPORT.md`

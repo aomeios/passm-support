@@ -56,9 +56,9 @@
         <h1 data-lang="en">PassM Privacy Policy</h1>
         <h1 data-lang="ja">PassM プライバシーポリシー</h1>
         <p>
-          <span data-lang="zh">最後更新日期：2026-10-26 · 適用產品：PassM（iOS / iPadOS / Android）</span>
-          <span data-lang="en">Last Updated: October 26, 2026 · Applicable Product: PassM (iOS / iPadOS / Android)</span>
-          <span data-lang="ja">最終更新日：2026-10-26 ・ 対象製品：PassM（iOS / iPadOS / Android）</span>
+          <span data-lang="zh">最後更新日期：2026-11-26 · 適用產品：PassM（iOS / iPadOS / Android）</span>
+          <span data-lang="en">Last Updated: 2026-11-26 (November 26, 2026) · Applicable Product: PassM (iOS / iPadOS / Android)</span>
+          <span data-lang="ja">最終更新日：2026-11-26 ・ 対象製品：PassM（iOS / iPadOS / Android）</span>
         </p>
       </div>
 
@@ -81,10 +81,11 @@
           <li><strong>生物辨識驗證</strong>：當您啟用指紋、Face ID 或 Touch ID 快速解鎖時，生物特徵驗證完全由 Android 作業系統或 iOS LocalAuthentication / Secure Enclave 在本機執行；PassM 僅讀取硬體授權狀態，絕無法存取您的生物特徵原始資料。</li>
         </ol>
 
-        <h2>3. 備份檔案（.passmbak）與匯入資料處理</h2>
+        <h2>3. 備份檔案（.passmbak）、離線備份健康度提醒與匯入資料處理</h2>
         <ul>
           <li>當您使用匯出加密備份（<code>.passmbak</code>）或匯入 CSV／備份檔時，檔案僅透過系統原生的檔案選擇器（Android Storage Access Framework / iOS Document Picker）由您本人指定本機或個人雲端硬碟路徑讀寫。</li>
           <li><code>.passmbak</code> 備份檔採用 <code>PBKDF2-HMAC-SHA256</code>（1,200,000 次迭代）與 <code>AES-256-GCM</code> 加密，開發者無法存取或解密您的備份檔案。</li>
+          <li><strong>離線備份健康度提醒零外傳承諾</strong>：App 內建之離線備份健康度提醒狀態（上次備份時間戳、未備份變更計數、靜音時間與提醒頻率偏好）<strong>100% 於裝置本機硬體安全區域（Android Keystore / iOS Keychain）封印儲存並純離線評估，絕不使用任何遠端推播伺服器、背景網路連線或行為分析追蹤</strong>，且於執行重設密碼庫時同步清除。</li>
         </ul>
 
         <h2>4. 應用程式內購買（PassM Pro）</h2>
@@ -127,10 +128,11 @@
           <li><strong>Biometric Authentication</strong>: Fingerprint, Face ID, and Touch ID checks are performed strictly by the operating system (<code>BiometricPrompt</code> / <code>LocalAuthentication</code>). PassM never accesses raw biometric templates.</li>
         </ol>
 
-        <h2>3. Backups (.passmbak) &amp; File Imports</h2>
+        <h2>3. Backups (.passmbak), Offline Backup Health Reminders &amp; File Imports</h2>
         <ul>
           <li>Exporting <code>.passmbak</code> backups or importing CSV/backup files uses the system file picker (Android SAF / iOS Document Picker) to read or write only the specific file you select.</li>
           <li><code>.passmbak</code> files are encrypted locally with <code>PBKDF2-HMAC-SHA256</code> (1,200,000 iterations) and <code>AES-256-GCM</code>.</li>
+          <li><strong>100% Local Backup Health Reminders</strong>: Offline backup hygiene metadata (last backup timestamp, unsaved change count, snooze timestamp, and reminder interval preference) is <strong>100% sealed inside local device hardware-backed security storage (Android Keystore / iOS Keychain) and evaluated strictly offline — never using remote push notification servers, background network connections, or behavioral analytics tracking</strong>, and is purged whenever the vault is reset.</li>
         </ul>
 
         <h2>4. In-App Purchases (PassM Pro)</h2>
@@ -172,9 +174,10 @@
           <li>Face ID / Touch ID / 指紋認証は OS 標準機能により端末内でのみ処理され、PassM が生体情報そのものにアクセスすることはありません。</li>
         </ul>
 
-        <h2>3. バックアップ（.passmbak）およびデータの削除</h2>
+        <h2>3. バックアップ（.passmbak）・オフラインバックアップ通知およびデータの削除</h2>
         <ul>
           <li><code>.passmbak</code> バックアップは <code>PBKDF2-HMAC-SHA256</code>（1,200,000 回反復）および <code>AES-256-GCM</code> で暗号化され、OS 標準のファイル選択機能を通じてお客様ご自身が指定した保存先にのみ出力されます。</li>
+          <li><strong>オフラインバックアップ健全性通知の完全ローカル処理</strong>：前回バックアップ日時や未バックアップ変更件数などの通知状態は、<strong>100% 端末内のハードウェア保護領域（Android Keystore / iOS Keychain）に封印保存され完全オフラインで判定されます。外部プッシュ通知サーバー、バックグラウンド通信、行動分析トラッキングは一切使用せず</strong>、保管庫の初期化時には同時に消去されます。</li>
           <li>すべてのデータは端末内にのみ存在するため、アプリ内の初期化機能（iOS ロック解除画面での <code>RESET</code> 実行）またはアンインストールによりいつでも消去できます。</li>
         </ul>
 

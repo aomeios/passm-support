@@ -40,7 +40,7 @@
 | **Zero Cloud / Network** | 100% local processing; zero backend servers, zero analytics/ad SDKs; `INTERNET` permission stripped on Android |
 | **Key Derivation** | `PBKDF2-HMAC-SHA256` (600,000 iterations) + `HKDF-SHA256` bound to 32-byte Keychain / Keystore `Device Secret` |
 | **Dual-Layer Encryption** | Tier 1: SQLCipher (`AES-256` raw key) · Tier 2: Per-field `AES-256-GCM` bound to 34-byte AAD (`VaultId + ItemId + ColumnId`) |
-| **Encrypted Backup** | Portable `.passmbak` sealed with `PBKDF2-HMAC-SHA256` (1,200,000 iterations) + `AES-256-GCM` (60-byte header AAD) |
+| **Encrypted Backup** | Portable `.passmbak` sealed with `PBKDF2-HMAC-SHA256` (1,200,000 iterations) + `AES-256-GCM` (60-byte header AAD); smart 100% offline hardware-sealed backup reminders &amp; iOS password-verified reinstall rebuild |
 | **Honest Pricing** | **Free Tier**: up to 100 items forever (Soft-Cap No-Lockout Guarantee) · **PassM Pro Lifetime**: `$9.99` USD one-time unlock |
 
 ---

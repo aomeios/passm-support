@@ -293,6 +293,46 @@
               <p data-lang="ja">総当たり攻撃を防ぐため、5回連続で誤入力するとシステム時刻の変更では回避できない指数バックオフ待機時間（30秒〜最大30分）が適用されます。また、コピーしたパスワードは機密属性が付与され、指定秒数の経過またはロック時に自動消去されます。</p>
             </div>
           </details>
+
+          <!-- FAQ 9 -->
+          <details class="faq-item">
+            <summary>
+              <span data-lang="zh">Q9：移除或重新安裝 App 後，原本的本機密碼資料還在嗎？iOS 重裝後如何重建金庫？</span>
+              <span data-lang="en">Q9: Are my local passwords still there after uninstalling or reinstalling the app? How do I rebuild my vault on iOS?</span>
+              <span data-lang="ja">Q9：アプリを削除・再インストールした後、端末内のパスワードデータは残りますか？iOS 再インストール後の保管庫再作成方法は？</span>
+            </summary>
+            <div class="faq-body">
+              <p data-lang="zh">PassM 採 <strong>100% 零知識無雲端架構</strong>，無任何遠端伺服器備份；當您移除 App 時，作業系統會一併刪除本機加密資料庫，<strong>移除 App 或換機前請務必先至「設定」匯出 <code>.passmbak</code> 加密備份</strong>。</p>
+              <ul data-lang="zh">
+                <li><strong>iOS / iPadOS 重新安裝</strong>：可直接於解鎖畫面輸入<strong>原始舊主密碼</strong>驗證身分（點擊「驗證原密碼並重建金庫」），系統將自動清除殘留舊鑰並以全新隨機金鑰建立空白金庫，進入後至 <strong>「設定 ➔ 匯入加密備份」</strong> 選取 <code>.passmbak</code> 即可還原；若忘記舊主密碼，亦可點擊「忘記主密碼？」透過勾選確認與輸入大寫 <code>RESET</code> 的高門檻確認流程重設。</li>
+                <li><strong>Android 重新安裝</strong>：開啟後直接建立主密碼與空白金庫，再至 <strong>「設定 ➔ 匯入加密備份」</strong> 選取 <code>.passmbak</code> 即可還原。</li>
+              </ul>
+              <p data-lang="en">PassM uses a <strong>100% zero-knowledge, cloud-free architecture</strong>. When you uninstall the app, the operating system deletes the local encrypted database along with the app sandbox — <strong>always export a <code>.passmbak</code> encrypted backup before uninstalling the app or switching devices</strong>.</p>
+              <ul data-lang="en">
+                <li><strong>Reinstalling on iOS / iPadOS</strong>: Enter your <strong>original Master Password</strong> on the Unlock screen and tap <strong>"Verify password and rebuild vault"</strong>. PassM verifies your identity, purges residual keys, and creates a new empty vault with fresh random keys (then go to <strong>Settings ➔ Import Encrypted Backup</strong> to restore your <code>.passmbak</code> file). If you forgot your old Master Password, use <strong>"Forgot Master Password?"</strong> to complete the high-threshold uppercase <code>RESET</code> confirmation flow.</li>
+                <li><strong>Reinstalling on Android</strong>: Create a Master Password on launch, then go to <strong>Settings ➔ Import Encrypted Backup</strong> to restore your <code>.passmbak</code> archive.</li>
+              </ul>
+              <p data-lang="ja">PassM は <strong>100% ゼロ知識・クラウドなし設計</strong>のため、アプリを削除すると OS によって端末内のローカル暗号化データベースも一括消去されます。<strong>アプリの削除や機種変更の前には、必ず事前に <code>.passmbak</code> 暗号化バックアップをエクスポートしてください。</strong></p>
+              <ul data-lang="ja">
+                <li><strong>iOS / iPadOS で再インストールした場合</strong>：ロック解除画面で<strong>元の古いマスターパスワード</strong>を入力して本人確認（<strong>「元のパスワードを確認して保管庫を再作成」</strong>）を行うと、残存する古い鍵が自動消去され、新しいランダム鍵で空の保管庫が構築されます（起動後、<strong>「設定 ➔ 暗号化バックアップをインポート」</strong>から <code>.passmbak</code> を復元できます）。元のマスターパスワードを忘れた場合は、高閾値の <code>RESET</code> 確認フローから初期化できます。</li>
+                <li><strong>Android で再インストールした場合</strong>：初回起動時に新しい保管庫を作成し、<strong>「設定 ➔ 暗号化バックアップをインポート」</strong>から <code>.passmbak</code> を読み込んで復元してください。</li>
+              </ul>
+            </div>
+          </details>
+
+          <!-- FAQ 10 -->
+          <details class="faq-item">
+            <summary>
+              <span data-lang="zh">Q10：首頁的「離線備份提醒」如何運作？可以調整頻率或關閉嗎？</span>
+              <span data-lang="en">Q10: How does the home-screen "Offline Backup Reminder" work? Can I change its frequency or turn it off?</span>
+              <span data-lang="ja">Q10：ホーム画面の「オフラインバックアップ通知」の仕組みは？頻度の変更やオフはできますか？</span>
+            </summary>
+            <div class="faq-body">
+              <p data-lang="zh">雙平台採用 100% 本機離線評估之<strong>非阻斷式智慧提醒</strong>：當符合<strong>「首次達 3 筆未備份（或首筆滿 3 天）」</strong>、<strong>「距上次備份累積達 5 筆變更」</strong>或<strong>「有未備份變更且逾 14 天」</strong>（以及逾 90 天定期檢視）時，首頁頂部會溫和提示一鍵匯出 <code>.passmbak</code>（實際完成匯出落盤後自動歸零）。支援點擊 <strong>「稍後提醒」</strong> 靜音 7 天（期間右上角設定齒輪圖示保留微圓點提醒），並可隨時於 <strong>「設定 ➔ 備份與資料管理」</strong> 自由調整為每 <strong>7 天</strong>、<strong>14 天預設</strong>、<strong>30 天</strong>或<strong>關閉首頁橫幅</strong>。</p>
+              <p data-lang="en">Both iOS and Android feature a <strong>non-blocking smart offline reminder</strong>: a gentle banner prompts a one-tap <code>.passmbak</code> export on the home screen when <strong>3 items are added without an initial backup (or your first item reaches 3 days old)</strong>, <strong>5 changes accumulate since your last backup</strong>, or <strong>unsaved changes remain past 14 days</strong> (plus a 90-day freshness check), resetting once a backup file is saved. You can tap <strong>"Remind me later"</strong> to snooze the banner for 7 days (keeping a subtle dot on the Settings gear icon), or go to <strong>Settings ➔ Backup &amp; Data Management</strong> to choose <strong>Every 7 days</strong>, <strong>14-day default</strong>, <strong>Every 30 days</strong>, or <strong>Turn off home banner</strong>.</p>
+              <p data-lang="ja">iOS / Android ともに完全オフライン判定による<strong>非ブロック型スマート通知</strong>を採用しています。<strong>「初回未バックアップで 3 件到達（または最初の項目から 3 日経過）」</strong>、<strong>「前回バックアップから 5 件の変更蓄積」</strong>、または<strong>「未保存の変更があり 14 日経過」</strong>（および 90 日経過時の定期確認）に達すると、ホーム画面でワンタップ出力を穏やかに案内します（出力完了で自動リセット）。<strong>「後で通知」</strong>でバナーを 7 日間ミュートでき（設定アイコンには控えめなドットを保持）、<strong>「設定 ➔ バックアップとデータ管理」</strong>から <strong>7日ごと</strong>・<strong>14日標準</strong>・<strong>30日ごと</strong>・<strong>ホームバナーをオフ</strong> へいつでも変更可能です。</p>
+            </div>
+          </details>
         </div>
       </section>
     </div>
