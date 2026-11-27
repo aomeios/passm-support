@@ -83,14 +83,30 @@
 
         <div class="cta-row">
           <a class="btn btn-gold" href="https://apps.apple.com/app/id6835392141" target="_blank" rel="noopener noreferrer">
-            <span data-lang="zh"> 於 App Store 下載 (iOS / iPadOS)</span>
+            <span data-lang="zh"> App Store 下載 (iOS / iPadOS)</span>
             <span data-lang="en"> Download on the App Store</span>
             <span data-lang="ja"> App Store で入手 (iOS / iPadOS)</span>
           </a>
+          <a class="btn btn-play" href="./support.html#android-beta" data-open-android-modal>
+            <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none">
+              <path d="M4.5 3.4c-.3.32-.5.8-.5 1.4v14.4c0 .6.2 1.08.5 1.4l.08.07L13.1 12.1v-.2L4.58 3.33l-.08.07z" fill="#3ddc84"/>
+              <path d="M15.94 14.95l-2.84-2.85v-.2l2.84-2.85.07.04 3.36 1.91c.96.54.96 1.43 0 1.98l-3.36 1.91-.07.06z" fill="#ffd700"/>
+              <path d="M16.01 14.89L13.1 12 4.5 20.6c.32.34.84.38 1.44.04l10.07-5.75z" fill="#e06c7e"/>
+              <path d="M16.01 9.11L5.94 3.36C5.34 3.02 4.82 3.06 4.5 3.4L13.1 12l2.91-2.89z" fill="#60a5fa"/>
+            </svg>
+            <span data-lang="zh">Google Play 取得 (Android)</span>
+            <span data-lang="en">Get on Google Play</span>
+            <span data-lang="ja">Google Play で入手</span>
+            <span class="btn-badge">
+              <span data-lang="zh">搶先體驗</span>
+              <span data-lang="en">Early Access</span>
+              <span data-lang="ja">先行体験</span>
+            </span>
+          </a>
           <a class="btn btn-outline" href="./support.html">
-            <span data-lang="zh">客戶支援與常見問題 ➔</span>
-            <span data-lang="en">Support Center &amp; FAQ ➔</span>
-            <span data-lang="ja">サポートセンター・FAQ ➔</span>
+            <span data-lang="zh">客戶支援與 FAQ ➔</span>
+            <span data-lang="en">Support &amp; FAQ ➔</span>
+            <span data-lang="ja">サポート・FAQ ➔</span>
           </a>
         </div>
 
@@ -323,11 +339,22 @@
                 <span data-lang="ja">App Store / Google Play 公式決済で安全に処理（開発者は決済情報を一切取得しません）</span>
               </li>
             </ul>
-            <div style="margin-top: 24px;">
-              <a class="btn btn-gold" style="width: 100%;" href="https://apps.apple.com/app/id6835392141" target="_blank" rel="noopener noreferrer">
-                <span data-lang="zh">立即於 App Store 取得 PassM</span>
-                <span data-lang="en">Get PassM on the App Store</span>
-                <span data-lang="ja">App Store で PassM をダウンロード</span>
+            <div class="pricing-cta-grid">
+              <a class="btn btn-gold" href="https://apps.apple.com/app/id6835392141" target="_blank" rel="noopener noreferrer">
+                <span data-lang="zh"> App Store 取得</span>
+                <span data-lang="en"> Get on App Store</span>
+                <span data-lang="ja"> App Store で入手</span>
+              </a>
+              <a class="btn btn-play" href="./support.html#android-beta" data-open-android-modal>
+                <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none">
+                  <path d="M4.5 3.4c-.3.32-.5.8-.5 1.4v14.4c0 .6.2 1.08.5 1.4l.08.07L13.1 12.1v-.2L4.58 3.33l-.08.07z" fill="#3ddc84"/>
+                  <path d="M15.94 14.95l-2.84-2.85v-.2l2.84-2.85.07.04 3.36 1.91c.96.54.96 1.43 0 1.98l-3.36 1.91-.07.06z" fill="#ffd700"/>
+                  <path d="M16.01 14.89L13.1 12 4.5 20.6c.32.34.84.38 1.44.04l10.07-5.75z" fill="#e06c7e"/>
+                  <path d="M16.01 9.11L5.94 3.36C5.34 3.02 4.82 3.06 4.5 3.4L13.1 12l2.91-2.89z" fill="#60a5fa"/>
+                </svg>
+                <span data-lang="zh">Google Play 搶先體驗</span>
+                <span data-lang="en">Google Play Early Access</span>
+                <span data-lang="ja">Google Play 先行体験</span>
               </a>
             </div>
           </div>
@@ -335,6 +362,72 @@
       </div>
     </section>
   </main>
+
+  <!-- Android 2-Step Early Access Modal -->
+  <div id="android-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="android-modal-heading" aria-hidden="true">
+    <div class="modal-card">
+      <div class="modal-top">
+        <div>
+          <span class="brand-badge">Android 1.1.0 · Google Play Early Access</span>
+          <h3 id="android-modal-heading" class="modal-title">
+            <span data-lang="zh">2 步驟立即取得 PassM Android 版</span>
+            <span data-lang="en">Get PassM for Android in 2 Instant Steps</span>
+            <span data-lang="ja">2ステップで PassM Android 版を即時入手</span>
+          </h3>
+        </div>
+        <button type="button" class="modal-close" data-close-android-modal aria-label="Close">×</button>
+      </div>
+
+      <p class="modal-lead" data-lang="zh">
+        PassM Android 版已通過 Google Play 官方審查。因封閉測試白名單機制，請使用<strong>同一個 Google 帳號</strong>依序點擊以下兩步，全自動秒開通下載權限（免人工審核）：
+      </p>
+      <p class="modal-lead" data-lang="en">
+        PassM for Android has passed official Google Play review. Due to Google Play's closed-testing whitelist gate, complete these two instant steps with the <strong>same Google account</strong> — zero manual approval wait:
+      </p>
+      <p class="modal-lead" data-lang="ja">
+        PassM Android 版は Google Play 公式審査を通過済みです。クローズドテストの承認仕様により、<strong>同じ Google アカウント</strong>で以下の 2 ステップを順にタップすると即時ダウンロードが有効化されます（承認待ち不要）：
+      </p>
+
+      <div class="modal-steps">
+        <div class="modal-step">
+          <div class="modal-step-tag">Step 01 · Google Group Whitelist</div>
+          <h4 data-lang="zh">加入官方測試群組（自動開通白名單）</h4>
+          <h4 data-lang="en">Join the Official Tester Google Group</h4>
+          <h4 data-lang="ja">公式テスター Google グループに参加</h4>
+          <p data-lang="zh">點擊頁面上的<strong>「加入群組 (Join group)」</strong>即可即時解鎖 Google Play 測試權限。成員名單已設為嚴格隱藏，其他測試員看不到您的信箱，亦可選擇不接收郵件。</p>
+          <p data-lang="en">Click <strong>"Join group"</strong> on Google Groups to instantly whitelist your account. Member emails are strictly hidden from other testers, and email delivery can be disabled.</p>
+          <p data-lang="ja">ページ内の<strong>「グループに参加」</strong>をタップすると即時承認されます。メンバー一覧は非公開設定のため他者にメールアドレスは表示されず、メール配信なしも選択可能です。</p>
+          <a class="btn btn-outline" href="https://groups.google.com/g/passm-testers" target="_blank" rel="noopener noreferrer">
+            <span data-lang="zh">1. 前往加入 Google 測試群組 ↗</span>
+            <span data-lang="en">1. Open &amp; Join Google Group ↗</span>
+            <span data-lang="ja">1. Google グループに参加する ↗</span>
+          </a>
+        </div>
+
+        <div class="modal-step">
+          <div class="modal-step-tag">Step 02 · Google Play Store</div>
+          <h4 data-lang="zh">確認測試員身分並從 Google Play 安裝</h4>
+          <h4 data-lang="en">Accept Opt-In &amp; Install on Google Play</h4>
+          <h4 data-lang="ja">テスト参加を確認して Google Play から入手</h4>
+          <p data-lang="zh">完成第 1 步後，開啟下方連結點擊<strong>「成為測試人員 (Become a tester)」</strong>，即可直接於 Google Play 下載正式簽章版 PassM（免費享 100 筆全功能）。</p>
+          <p data-lang="en">After joining the group, open the link below, tap <strong>"Become a tester"</strong>, and install PassM directly from Google Play (free up to 100 items forever).</p>
+          <p data-lang="ja">ステップ 1 完了後、下のリンクから<strong>「テスターになる」</strong>をタップすると、Google Play から PassM を直接インストールできます（100件まで永久無料）。</p>
+          <a class="btn btn-gold" href="https://play.google.com/apps/testing/com.chris.passm" target="_blank" rel="noopener noreferrer">
+            <span data-lang="zh">2. 開啟測試連結並前往 Google Play 下載 ↗</span>
+            <span data-lang="en">2. Opt-In &amp; Download on Google Play ↗</span>
+            <span data-lang="ja">2. テストに参加して Google Play で入手 ↗</span>
+          </a>
+          <div class="modal-sublink">
+            <a href="https://play.google.com/store/apps/details?id=com.chris.passm" target="_blank" rel="noopener noreferrer">
+              <span data-lang="zh">已完成上述兩步？直接開啟 Google Play 商店頁面 ↗</span>
+              <span data-lang="en">Already opted in? Open directly in Google Play Store ↗</span>
+              <span data-lang="ja">参加済みの方はこちら：Google Play ストアを直接開く ↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <footer class="footer">
     <div class="container footer-inner">

@@ -27,7 +27,7 @@
         "",
         "• 平台與系統版本（如 iOS 18.7 / iOS 26 / Android 15）：",
         "• 手機或平板型號（如 iPhone 16 Pro / iPad Pro / Pixel 9）：",
-        "• PassM 版本號（預設 1.0）：",
+        "• PassM 版本號（預設 1.1.0）：",
         "• 問題發生步驟與畫面提示訊息：",
         "",
         "---",
@@ -40,7 +40,7 @@
         "",
         "• OS とバージョン（例：iOS 18.7 / iOS 26 / Android 15）：",
         "• 端末モデル（例：iPhone 16 Pro / iPad Pro / Pixel 9）：",
-        "• PassM バージョン（例：1.0）：",
+        "• PassM バージョン（例：1.1.0）：",
         "• 発生手順と表示されたエラーメッセージ：",
         "",
         "---",
@@ -53,7 +53,7 @@
         "",
         "• OS & Version (e.g., iOS 18.7 / iOS 26 / Android 15):",
         "• Device Model (e.g., iPhone 16 Pro / iPad Pro / Pixel 9):",
-        "• PassM App Version (e.g., 1.0):",
+        "• PassM App Version (e.g., 1.1.0):",
         "• Steps to Reproduce & Displayed Message:",
         "",
         "---",
@@ -129,6 +129,74 @@
           items[k].style.display = (!q || text.indexOf(q) !== -1) ? "" : "none";
         }
       });
+    }
+
+    var androidModal = document.getElementById("android-modal");
+    var lastModalTrigger = null;
+
+    function openAndroidModal(trigger) {
+      if (!androidModal) return;
+      lastModalTrigger = trigger || document.activeElement;
+      androidModal.classList.add("open");
+      androidModal.setAttribute("aria-hidden", "false");
+      document.body.classList.add("modal-open");
+      var closeBtn = androidModal.querySelector("[data-close-android-modal]");
+      if (closeBtn) closeBtn.focus();
+    }
+
+    function closeAndroidModal() {
+      if (!androidModal || !androidModal.classList.contains("open")) return;
+      androidModal.classList.remove("open");
+      androidModal.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("modal-open");
+      if (window.location.hash === "#android-early-access" && window.history && window.history.replaceState) {
+        window.history.replaceState(null, "", window.location.pathname + window.location.search);
+      }
+      if (lastModalTrigger && typeof lastModalTrigger.focus === "function") {
+        lastModalTrigger.focus();
+      }
+    }
+
+    if (androidModal) {
+      var openBtns = document.querySelectorAll("[data-open-android-modal]");
+      for (var m = 0; m < openBtns.length; m++) {
+        openBtns[m].addEventListener("click", function (e) {
+          if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+          e.preventDefault();
+          openAndroidModal(this);
+        });
+      }
+
+      var closeBtns = androidModal.querySelectorAll("[data-close-android-modal]");
+      for (var x = 0; x < closeBtns.length; x++) {
+        closeBtns[x].addEventListener("click", closeAndroidModal);
+      }
+
+      androidModal.addEventListener("click", function (e) {
+        if (e.target === androidModal) closeAndroidModal();
+      });
+
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && androidModal.classList.contains("open")) {
+          closeAndroidModal();
+        }
+      });
+
+      if (window.location.hash === "#android-early-access") {
+        openAndroidModal(null);
+      }
+      window.addEventListener("hashchange", function () {
+        if (window.location.hash === "#android-early-access") {
+          openAndroidModal(null);
+        }
+      });
+    }
+
+    if (window.location.hash) {
+      var targetFaq = document.querySelector(window.location.hash);
+      if (targetFaq && targetFaq.tagName && targetFaq.tagName.toLowerCase() === "details") {
+        targetFaq.setAttribute("open", "open");
+      }
     }
   });
 })();

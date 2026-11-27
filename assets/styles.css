@@ -270,6 +270,43 @@ main {
   border-color: var(--gold-border);
   background: var(--surface-hover);
 }
+.btn-play {
+  background: linear-gradient(180deg, #21212a 0%, #17171e 100%);
+  color: var(--text);
+  border-color: var(--gold-border);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.36);
+}
+.btn-play:hover {
+  border-color: var(--gold);
+  background: linear-gradient(180deg, #282833 0%, #1d1d26 100%);
+  box-shadow: 0 8px 26px rgba(255, 215, 0, 0.16);
+}
+.btn-icon {
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+}
+.btn-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--gold);
+  background: var(--gold-dim);
+  border: 1px solid var(--gold-border);
+  padding: 2px 8px;
+  border-radius: 999px;
+  line-height: 1.3;
+}
+.pricing-cta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(205px, 1fr));
+  gap: 10px;
+  margin-top: 24px;
+}
+.pricing-cta-grid .btn {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 0.93rem;
+}
 
 /* Trust Strip */
 .trust-strip {
@@ -605,6 +642,133 @@ details.faq-item[open] summary::after {
   transform: translateX(-50%) translateY(0);
 }
 
+/* Android Early Access Modal */
+body.modal-open {
+  overflow: hidden;
+}
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  background: rgba(6, 6, 8, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.18s ease, visibility 0.18s ease;
+}
+.modal-backdrop.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+.modal-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--gold-border);
+  border-radius: var(--radius-lg);
+  max-width: 580px;
+  width: 100%;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  padding: 28px;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.7);
+  transform: translateY(8px);
+  transition: transform 0.18s ease;
+}
+.modal-backdrop.open .modal-card {
+  transform: translateY(0);
+}
+.modal-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+.modal-close {
+  background: var(--surface);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+.modal-close:hover {
+  color: var(--gold);
+  border-color: var(--gold-border);
+}
+.modal-title {
+  font-size: 1.32rem;
+  font-weight: 800;
+  line-height: 1.3;
+  margin-top: 8px;
+}
+.modal-lead {
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  margin-bottom: 18px;
+}
+.modal-steps {
+  display: grid;
+  gap: 14px;
+}
+.modal-step {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 18px;
+}
+.modal-step-tag {
+  font-size: 0.73rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 4px;
+}
+.modal-step h4 {
+  font-size: 1.02rem;
+  margin-bottom: 6px;
+  color: var(--text);
+}
+.modal-step p {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  margin-bottom: 14px;
+}
+.modal-step .btn {
+  width: 100%;
+  padding: 11px 18px;
+  font-size: 0.92rem;
+}
+.modal-sublink {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+.modal-sublink a {
+  color: var(--text-secondary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.modal-sublink a:hover {
+  color: var(--gold);
+}
+
 /* Footer */
 .footer {
   margin-top: 64px;
@@ -642,5 +806,12 @@ details.faq-item[open] summary::after {
   }
   .container {
     padding: 0 16px;
+  }
+  .cta-row .btn {
+    width: 100%;
+    max-width: 380px;
+  }
+  .modal-card {
+    padding: 22px 18px;
   }
 }
